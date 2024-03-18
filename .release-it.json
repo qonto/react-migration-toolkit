@@ -1,0 +1,22 @@
+{
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": {
+        "name": "angular"
+      },
+      "infile": "CHANGELOG.md"
+    },
+    "@release-it-plugins/workspaces": {
+      "publish": false
+    }
+  },
+  "git": {
+    "commitMessage": "release v${version}",
+    "requireBranch": "main",
+    "tagName": "v${version}"
+  },
+  "hooks": {
+    "after:bump": "pnpm i --frozen-lockfile=false"
+  },
+  "npm": false
+}
