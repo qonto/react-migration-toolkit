@@ -1,0 +1,10 @@
+{{! @glint-nocheck }}
+<div
+  local-class='react-bridge-wrapper'
+  data-test-react-bridge-component
+  {{this.reactModifier reactComponent=@reactComponent props=@props}}
+>
+  {{#if (has-block)}}
+    {{yield}}
+  {{/if}}
+</div>
