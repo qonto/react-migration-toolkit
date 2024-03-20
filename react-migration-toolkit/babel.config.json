@@ -1,11 +1,21 @@
 {
+  "presets": [
+    ["@babel/preset-typescript", { "onlyRemoveTypeImports": true }],
+    "@babel/preset-env",
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ],
   "plugins": [
-  ["@babel/plugin-transform-typescript", { "allExtensions": true, "onlyRemoveTypeImports": true, "allowDeclareFields": true }],
     "@embroider/addon-dev/template-colocation-plugin",
-    ["babel-plugin-ember-template-compilation", {
-      "targetFormat": "hbs",
-      "transforms": []
-    }],
-    ["module:decorator-transforms", { "runtime": { "import": "decorator-transforms/runtime" } }],
+    [
+      "babel-plugin-ember-template-compilation",
+      {
+        "targetFormat": "hbs",
+        "transforms": []
+      }
+    ],
+    [
+      "module:decorator-transforms",
+      { "runtime": { "import": "decorator-transforms/runtime" } }
+    ]
   ]
 }
