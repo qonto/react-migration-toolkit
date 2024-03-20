@@ -11,5 +11,28 @@ module.exports = function (defaults) {
   });
 
   const { maybeEmbroider } = require('@embroider/test-setup');
-  return maybeEmbroider(app);
+  return maybeEmbroider(app, {
+    packagerOptions: {
+      webpackConfig: {
+        module: {
+          rules: [
+            {
+              test: /\.tsx/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: [
+                    '@babel/preset-typescript',
+                    '@babel/preset-env',
+                    ['@babel/preset-react', { runtime: 'automatic' }],
+                  ],
+                },
+              },
+            },
+          ],
+        },
+        plugins: [],
+      },
+    },
+  });
 };
