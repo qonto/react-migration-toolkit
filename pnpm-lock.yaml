@@ -60,6 +60,15 @@ importers:
       '@babel/plugin-transform-typescript':
         specifier: ^7.23.6
         version: 7.23.6(@babel/core@7.24.0)
+      '@babel/preset-env':
+        specifier: ^7.24.0
+        version: 7.24.0(@babel/core@7.24.0)
+      '@babel/preset-react':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.24.0)
+      '@babel/preset-typescript':
+        specifier: ^7.23.3
+        version: 7.23.3(@babel/core@7.24.0)
       '@babel/runtime':
         specifier: ^7.17.0
         version: 7.24.0

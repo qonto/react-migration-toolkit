@@ -39,7 +39,7 @@ export default {
     // By default, this will load the actual babel config from the file
     // babel.config.json.
     babel({
-      extensions: ['.js', '.gjs', '.ts', '.gts'],
+      extensions: ['.js', '.gjs', '.ts', '.tsx', '.gts'],
       babelHelpers: 'bundled',
     }),
 
