@@ -1,5 +1,6 @@
 import { module, test } from 'qunit';
 import { hbs } from 'ember-cli-htmlbars';
+import Service from '@ember/service';
 import { render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'test-app/tests/helpers';
@@ -8,9 +9,14 @@ import { Example } from 'test-app/react/example.tsx';
 module('Integration | Component | react-bridge', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function (assert) {
+  hooks.beforeEach(function () {
     this.setProperties({
       reactExample: Example,
+    });
+  });
+
+  test('it renders with props and children', async function (assert) {
+    this.setProperties({
       propsText: new (class {
         @tracked value = 'props content';
       })(),
@@ -49,5 +55,28 @@ module('Integration | Component | react-bridge', function (hooks) {
 
     await settled();
     assert.dom(this.element).hasText(/new props content/i);
+  });
+
+  test('it can access the Ember application instance', async function (assert) {
+    await render(hbs`
+      <ReactBridge @reactComponent={{this.reactExample}} />
+    `);
+
+    assert.dom("[data-test-has-owner='true']").exists();
+  });
+
+  test('it can access Ember services', async function (assert) {
+    this.owner.register(
+      'service:mockUserService',
+      class extends Service {
+        user = { name: 'John Doe' };
+      },
+    );
+
+    await render(hbs`
+      <ReactBridge @reactComponent={{this.reactExample}} />
+    `);
+
+    assert.dom(this.element).includesText('User: John Doe');
   });
 });
