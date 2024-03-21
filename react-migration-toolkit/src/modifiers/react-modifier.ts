@@ -12,6 +12,7 @@ import {
 import { createRoot, type Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import type ApplicationInstance from '@ember/application/instance';
+import { App } from '../react/app/app.tsx';
 
 function cleanup(instance: ReactModifier) {
   instance.root?.unmount();
@@ -89,9 +90,9 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
     }
 
     const wrappedComponent = createElement(
-      reactComponent,
-      props,
-      this.children,
+      App,
+      { owner: this.owner },
+      createElement(reactComponent, props, this.children),
     );
 
     if (macroCondition(isTesting())) {
