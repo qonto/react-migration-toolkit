@@ -34,7 +34,7 @@ export function Example({ text, children }: ExampleProps): ReactNode {
         </div>
       )}
       {children && (
-        <div>
+        <div data-test-children>
           <hr />
           <h3>Children values:</h3>
           {children}
