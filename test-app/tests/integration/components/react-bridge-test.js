@@ -5,6 +5,7 @@ import { render, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'test-app/tests/helpers';
 import { Example } from 'test-app/react/example.tsx';
+import { CustomProviders } from 'test-app/react/custom-providers.tsx';
 
 module('Integration | Component | react-bridge', function (hooks) {
   setupRenderingTest(hooks);
@@ -12,6 +13,7 @@ module('Integration | Component | react-bridge', function (hooks) {
   hooks.beforeEach(function () {
     this.setProperties({
       reactExample: Example,
+      reactProviders: CustomProviders,
     });
   });
 
@@ -78,5 +80,13 @@ module('Integration | Component | react-bridge', function (hooks) {
     `);
 
     assert.dom(this.element).includesText('User: John Doe');
+  });
+
+  test('it can access Ember services via custom providers', async function (assert) {
+    await render(hbs`
+      <ReactBridge @reactComponent={{this.reactExample}} @providersComponent={{this.reactProviders}} />
+    `);
+
+    assert.dom("[data-test-theme='light']").exists();
   });
 });
