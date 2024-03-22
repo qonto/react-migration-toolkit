@@ -57,6 +57,26 @@ module('Integration | Component | react-bridge', function (hooks) {
     assert.dom(this.element).hasText(/new props content/i);
   });
 
+  module('when no block is passed', function () {
+    test('it should not pass children to the react component', async function (assert) {
+      this.setProperties({
+        reactExample: Example,
+        props: {
+          text: 'props content',
+        },
+      });
+
+      await render(hbs`
+        <ReactBridge
+          @reactComponent={{this.reactExample}}
+          @props={{this.props}}
+        />
+      `);
+
+      assert.dom('[data-test-children]').doesNotExist();
+    });
+  });
+
   test('it can access the Ember application instance', async function (assert) {
     await render(hbs`
       <ReactBridge @reactComponent={{this.reactExample}} />

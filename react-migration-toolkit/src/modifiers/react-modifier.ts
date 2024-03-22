@@ -78,11 +78,14 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
       registerDestructor(this, cleanup);
     }
 
-    if (this.isInitialRender && element.childNodes.length > 0) {
+    const filteredChildNodes = Array.from(element.childNodes).filter(
+      ({ nodeType }) => nodeType !== Node.COMMENT_NODE,
+    );
+    if (this.isInitialRender && filteredChildNodes.length > 0) {
       const children = [
         createElement<YieldWrapperProps>(YieldWrapper, {
           key: crypto.randomUUID(),
-          nodes: Array.from(element.childNodes),
+          nodes: Array.from(filteredChildNodes),
         }),
       ];
       this.children = children;
