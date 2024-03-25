@@ -2,6 +2,7 @@ import ApplicationInstance from "@ember/application/instance";
 import { type ReactNode } from "react";
 import { useApplicationInstance } from "react-migration-toolkit/react/hooks/use-application-instance";
 import { useEmberService } from "react-migration-toolkit/react/hooks/use-ember-service";
+import { useTheme } from "./theme-context.tsx";
 
 interface ExampleProps {
   text?: string;
@@ -11,9 +12,13 @@ interface ExampleProps {
 export function Example({ text, children }: ExampleProps): ReactNode {
   const owner = useApplicationInstance();
   const { user } = (useEmberService("mockUserService") as any) ?? {};
+  const theme = useTheme();
 
   return (
-    <div data-test-has-owner={owner instanceof ApplicationInstance}>
+    <div
+      data-test-has-owner={owner instanceof ApplicationInstance}
+      data-test-theme={theme?.current}
+    >
       <h1>Hi there 👋</h1>
       <p>
         I am an example integrating a react component within an Ember

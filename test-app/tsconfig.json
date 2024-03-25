@@ -10,6 +10,7 @@
       "test-app/*": ["app/*"],
       "*": ["types/*"]
     },
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true
   }
 }

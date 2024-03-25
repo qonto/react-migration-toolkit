@@ -2,7 +2,11 @@
 <div
   local-class='react-bridge-wrapper'
   data-test-react-bridge-component
-  {{this.reactModifier reactComponent=@reactComponent props=@props}}
+  {{this.reactModifier
+    reactComponent=@reactComponent
+    props=@props
+    providersComponent=@providersComponent
+  }}
 >
   {{~#if (has-block)~}}
     {{yield}}
