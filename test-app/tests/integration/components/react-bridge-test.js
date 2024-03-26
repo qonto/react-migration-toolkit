@@ -1,18 +1,22 @@
 import { module, test } from 'qunit';
 import { hbs } from 'ember-cli-htmlbars';
 import Service from '@ember/service';
-import { render, settled } from '@ember/test-helpers';
+import { render, rerender, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'test-app/tests/helpers';
 import { Example } from 'test-app/react/example.tsx';
+import { ExampleIntl } from 'test-app/react/exampleIntl.tsx';
 import { CustomProviders } from 'test-app/react/custom-providers.tsx';
+import { setupIntl } from 'ember-intl/test-support';
 
 module('Integration | Component | react-bridge', function (hooks) {
   setupRenderingTest(hooks);
+  setupIntl(hooks);
 
   hooks.beforeEach(function () {
     this.setProperties({
       reactExample: Example,
+      reactExampleIntl: ExampleIntl,
       reactProviders: CustomProviders,
     });
   });
@@ -108,5 +112,18 @@ module('Integration | Component | react-bridge', function (hooks) {
     `);
 
     assert.dom("[data-test-theme='light']").exists();
+  });
+
+  test('it can use an Intl provider', async function (assert) {
+    await render(hbs`
+      <ReactBridge @reactComponent={{this.reactExampleIntl}} @providersComponent={{this.reactProviders}} />
+    `);
+
+    assert.dom(this.element).hasText('Welcome to React!');
+
+    await this.owner.lookup('service:intl').setLocale('de-de');
+    await rerender();
+
+    assert.dom(this.element).hasText('Willkommen in React!');
   });
 });
