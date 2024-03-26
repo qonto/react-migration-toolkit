@@ -9,6 +9,10 @@
   "license": "MIT",
   "author": "",
   "exports": {
+    "./react/contexts/*": {
+      "types": "./declarations/react/contexts/*.d.ts",
+      "default": "./dist/react/contexts/*.jsx"
+    },
     ".": {
       "types": "./declarations/index.d.ts",
       "default": "./dist/index.js"
