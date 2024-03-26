@@ -6,7 +6,9 @@ import { tracked } from '@glimmer/tracking';
 import { setupRenderingTest } from 'test-app/tests/helpers';
 import { Example } from 'test-app/react/example.tsx';
 import { ExampleIntl } from 'test-app/react/exampleIntl.tsx';
+import { ExampleWithLD } from 'test-app/react/example-ld.tsx';
 import { CustomProviders } from 'test-app/react/custom-providers.tsx';
+import { CustomProvidersWithLD } from 'test-app/react/custom-providers-with-ld.tsx';
 import { setupIntl } from 'ember-intl/test-support';
 
 module('Integration | Component | react-bridge', function (hooks) {
@@ -125,5 +127,26 @@ module('Integration | Component | react-bridge', function (hooks) {
     await rerender();
 
     assert.dom(this.element).hasText('Willkommen in React!');
+  });
+
+  module('when LDProvider is part of custom providers', function (hooks) {
+    hooks.beforeEach(function () {
+      this.customProvidersComponent = CustomProvidersWithLD;
+      this.reactExample = ExampleWithLD;
+    });
+
+    test('it can access flags via useFlags hook', async function (assert) {
+      await render(hbs`
+        <ReactBridge
+          @reactComponent={{this.reactExample}}
+          @providerOptions={{hash
+            component=this.customProvidersComponent
+            props=(hash ldFlags=this.context.allFlags)
+          }}
+        />
+      `);
+
+      assert.dom('[data-test-feature-experiment-a]').exists();
+    });
   });
 });
