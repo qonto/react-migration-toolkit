@@ -1,22 +1,23 @@
 import { StrictMode } from 'react';
-import type { ComponentType, PropsWithChildren, ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import type ApplicationInstance from '@ember/application/instance';
 import { ApplicationProvider } from '../contexts/application-context.tsx';
+import type { CustomProviderOptions } from '../../../types';
 
 interface AppProps {
   owner: ApplicationInstance;
-  providersComponent: ComponentType<{ children: ReactNode }>;
+  providerOptions: CustomProviderOptions | undefined;
 }
 
 export function App({
   children,
   owner,
-  providersComponent,
+  providerOptions,
 }: PropsWithChildren<AppProps>): ReactNode {
   return (
     <StrictMode>
       <ApplicationProvider owner={owner}>
-        <CustomProviders providersComponent={providersComponent}>
+        <CustomProviders providerOptions={providerOptions}>
           {children}
         </CustomProviders>
       </ApplicationProvider>
@@ -26,12 +27,14 @@ export function App({
 
 function CustomProviders({
   children,
-  providersComponent,
+  providerOptions,
 }: PropsWithChildren<{
-  providersComponent: ComponentType<{ children: ReactNode }>;
+  providerOptions: CustomProviderOptions | undefined;
 }>): ReactNode {
-  if (!providersComponent) return <>{children}</>;
+  if (!providerOptions?.component) {
+    return <>{children}</>;
+  }
 
-  const Component = providersComponent;
-  return <Component>{children}</Component>;
+  const { component: Component, props = {} } = providerOptions;
+  return <Component {...props}>{children}</Component>;
 }

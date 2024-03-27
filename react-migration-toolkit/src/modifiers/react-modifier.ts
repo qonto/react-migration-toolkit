@@ -8,12 +8,12 @@ import {
   Component as ReactComponent,
   type ReactElement,
   type ComponentType,
-  type ReactNode,
 } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import type ApplicationInstance from '@ember/application/instance';
 import { App } from '../react/app/app.tsx';
+import type { CustomProviderOptions } from '../../types';
 
 function cleanup(instance: ReactModifier) {
   instance.root?.unmount();
@@ -53,7 +53,7 @@ class YieldWrapper extends ReactComponent<YieldWrapperProps> {
 type ReactModifierOptions = {
   reactComponent: ComponentType;
   props: object;
-  providersComponent: ComponentType<{ children: ReactNode }>;
+  providerOptions: CustomProviderOptions | undefined;
 };
 
 export interface ReactModifierSignature {
@@ -73,7 +73,7 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
   modify(
     element: Element,
     positional: null,
-    { reactComponent, props, providersComponent }: ReactModifierOptions,
+    { reactComponent, props, providerOptions }: ReactModifierOptions,
   ) {
     if (!this.root) {
       this.root = createRoot(element);
@@ -96,7 +96,7 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
 
     const wrappedComponent = createElement(
       App,
-      { owner: this.owner, providersComponent },
+      { owner: this.owner, providerOptions },
       createElement(reactComponent, props, this.children),
     );
 
