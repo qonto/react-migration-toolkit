@@ -24,6 +24,26 @@ module('Unit | Utility | parseUrl', function () {
     assert.strictEqual(parseUrl(urlObject), expected);
   });
 
+  test('should handle a query string', function (assert) {
+    const urlObject = {
+      hostname: 'www.example.com',
+      pathname: '/',
+      query: 'str=hello',
+    };
+    const expected = 'www.example.com/?str=hello';
+    assert.strictEqual(parseUrl(urlObject), expected);
+  });
+
+  test('should handle a query string starting with ?', function (assert) {
+    const urlObject = {
+      hostname: 'www.example.com',
+      pathname: '/',
+      query: '?str=hello',
+    };
+    const expected = 'www.example.com/?str=hello';
+    assert.strictEqual(parseUrl(urlObject), expected);
+  });
+
   test('should handle a query object', function (assert) {
     const urlObject = {
       hostname: 'www.example.com',

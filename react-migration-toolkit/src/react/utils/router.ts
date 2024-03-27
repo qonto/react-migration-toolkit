@@ -29,11 +29,15 @@ const formatUrlObject = (urlObject: UrlObject): string => {
     }
   }
 
+  if (query && typeof query === 'string') {
+    query = query.startsWith('?') ? query : `?${query}`;
+  }
+
   if (query && typeof query === 'object') {
     query = String(urlQueryToSearchParams(query as ParsedUrlQuery));
   }
 
-  let search = urlObject.search || (query && `?${query}`) || '';
+  let search = urlObject.search || query;
 
   if (urlObject.slashes && host !== false) {
     host = `//${host || ''}`;
