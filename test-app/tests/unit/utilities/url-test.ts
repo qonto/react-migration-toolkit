@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { parseUrl } from 'react-migration-toolkit/react/utils/router';
+import { parseUrl } from 'react-migration-toolkit/react/utils/url';
 
 module('Unit | Utility | parseUrl', function () {
   test('should return the same string for string input', function (assert) {
