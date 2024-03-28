@@ -1,81 +1,90 @@
-import type { UrlObject } from '../types/router.ts';
+import type RouteInfo from '@ember/routing/route-info';
+import type { RouteModel } from '@ember/routing/router-service';
+import type RouterService from '@ember/routing/router-service';
 
-type ParsedUrlQuery = Record<string, string | string[] | undefined>;
-
-export const parseUrl = (url: string | UrlObject): string => {
-  if (typeof url === 'string') {
-    return url;
+export function setUrlFromRelativePath(
+  parsedUrl: string,
+  router: RouterService,
+): RouteInfo | undefined {
+  if (!router.currentURL) {
+    return;
   }
-  return formatUrlObject(url);
-};
+  const segments = router.currentURL.split('/').filter(Boolean);
+  const currentQueryParams = router.currentURL.split('?')[1] || '';
+  const targetQueryParams = parsedUrl.split('?')[1] || '';
 
-const formatUrlObject = (urlObject: UrlObject): string => {
-  const { hostname } = urlObject;
-  let { auth } = urlObject;
+  let index = segments[0] === 'organizations' ? 1 : 0;
+  let routeInfo;
+  while (index < segments.length) {
+    const url = `/${segments.slice(0, index + 1).join('/')}/${parsedUrl}`;
 
-  let pathname = urlObject.pathname || '';
-  let hash = urlObject.hash || '';
-  let query = urlObject.query || '';
-  let host: string | false = false;
+    /*
+      For some reason when using router.recognize on the current url, queryParams get lost from location history
+      and using transition object when trying to navigate back or in some cases just navigating back will not show the correct queryParams
+      so here we are checking if the target url is the same as the current url and avoid using router.recognize
+    */
+    if (`${url}?${currentQueryParams}` === router.currentURL) {
+      const queryParams = targetQueryParams
+        ? targetQueryParams
+            .split('&')
+            .reduce((acc: Record<string, string | undefined>, param) => {
+              const [key, value] = param.split('=');
+              if (key) acc[key] = value;
+              return acc;
+            }, {})
+        : {};
 
-  auth = auth ? `${encodeURIComponent(auth).replace(/%3A/i, ':')}@` : '';
-
-  if (urlObject.host) {
-    host = auth + urlObject.host;
-  } else if (hostname) {
-    host = auth + (hostname.includes(':') ? `[${hostname}]` : hostname);
-    if (urlObject.port) {
-      host += `:${urlObject.port}`;
+      routeInfo = { ...router.currentRoute, queryParams };
+      break;
     }
+
+    routeInfo = router.recognize(url);
+    if (routeInfo.name !== '404') break;
+    index++;
+  }
+  return routeInfo;
+}
+
+export function urlFromRouteInfo(
+  router: RouterService,
+  routeInfo: RouteInfo | null,
+) {
+  if (!routeInfo) {
+    return '/';
   }
 
-  if (query && typeof query === 'string') {
-    query = query.startsWith('?') ? query : `?${query}`;
+  const args = dynamicSegmentsFromRouteInfo(routeInfo) as RouteModel[];
+
+  if (routeInfo.queryParams && Object.keys(routeInfo.queryParams).length > 0) {
+    args.push({ queryParams: routeInfo.queryParams });
   }
 
-  if (query && typeof query === 'object') {
-    query = String(urlQueryToSearchParams(query as ParsedUrlQuery));
+  try {
+    return router.urlFor(routeInfo.name, ...args);
+  } catch {
+    return '/';
+  }
+}
+
+/**
+ * Returns an array of params for the route hierarchy starting with the passed-in `RouteInfo`.
+ * This array is ordered top-down so it can be passed onto methods such as `RouterService#urlFor`
+ *
+ * @param [RouteInfo] routeInfo The leaf routeInfo to tranverse
+ */
+function dynamicSegmentsFromRouteInfo(
+  routeInfo: RouteInfo | null,
+): Array<string | object | undefined> {
+  // https://github.com/NullVoxPopuli/ember-query-params-service/blob/e98e64e6cfa320f28a5f11c83b18da171c055355/addon/-private/dynamic-segments-from-route-info.ts
+  if (!routeInfo) {
+    return [];
   }
 
-  let search = urlObject.search || query;
-
-  if (urlObject.slashes && host !== false) {
-    host = `//${host || ''}`;
-    if (pathname && pathname.startsWith('/')) pathname = `/${pathname}`;
-  } else if (!host) {
-    host = '';
+  const parts: Array<string | object | undefined> =
+    dynamicSegmentsFromRouteInfo(routeInfo.parent);
+  for (const key of routeInfo.paramNames) {
+    parts.push(routeInfo.params[key]);
   }
 
-  if (hash && !hash.startsWith('#')) hash = `#${hash}`;
-  if (search && !search.startsWith('?')) search = `?${search}`;
-
-  pathname = pathname.replace(/[?#]/g, encodeURIComponent);
-  search = search.replace('#', '%23');
-
-  return `${host}${pathname}${search}${hash}`;
-};
-
-const urlQueryToSearchParams = (urlQuery: ParsedUrlQuery): URLSearchParams => {
-  const result = new URLSearchParams();
-  Object.entries(urlQuery).forEach(([key, value]) => {
-    if (Array.isArray(value)) {
-      value.forEach((item) => {
-        result.append(key, stringifyUrlQueryParam(item));
-      });
-    } else {
-      result.set(key, stringifyUrlQueryParam(value));
-    }
-  });
-  return result;
-};
-
-const stringifyUrlQueryParam = (param: unknown): string => {
-  if (
-    typeof param === 'string' ||
-    (typeof param === 'number' && !isNaN(param)) ||
-    typeof param === 'boolean'
-  ) {
-    return String(param);
-  }
-  return '';
-};
+  return parts;
+}
