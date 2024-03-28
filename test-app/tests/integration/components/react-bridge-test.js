@@ -17,7 +17,7 @@ module('Integration | Component | react-bridge', function (hooks) {
     this.setProperties({
       reactExample: Example,
       reactExampleIntl: ExampleIntl,
-      reactProviders: CustomProviders,
+      reactProviderOptions: { component: CustomProviders },
     });
   });
 
@@ -108,7 +108,7 @@ module('Integration | Component | react-bridge', function (hooks) {
 
   test('it can access Ember services via custom providers', async function (assert) {
     await render(hbs`
-      <ReactBridge @reactComponent={{this.reactExample}} @providersComponent={{this.reactProviders}} />
+      <ReactBridge @reactComponent={{this.reactExample}} @providerOptions={{this.reactProviderOptions}} />
     `);
 
     assert.dom("[data-test-theme='light']").exists();
@@ -116,7 +116,7 @@ module('Integration | Component | react-bridge', function (hooks) {
 
   test('it can use an Intl provider', async function (assert) {
     await render(hbs`
-      <ReactBridge @reactComponent={{this.reactExampleIntl}} @providersComponent={{this.reactProviders}} />
+      <ReactBridge @reactComponent={{this.reactExampleIntl}} @providerOptions={{this.reactProviderOptions}} />
     `);
 
     assert.dom(this.element).hasText('Welcome to React!');
