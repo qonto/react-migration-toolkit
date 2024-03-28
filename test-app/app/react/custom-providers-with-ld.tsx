@@ -6,12 +6,9 @@ import {
 
 export function CustomProvidersWithLD({
   children,
+  ldFlags,
 }: PropsWithChildren<{
   ldFlags: LDFlagSet;
 }>): ReactNode {
-  return (
-    <LDProvider ldFlags={{ "feature--experiment-a": true }}>
-      {children}
-    </LDProvider>
-  );
+  return <LDProvider ldFlags={ldFlags}>{children}</LDProvider>;
 }
