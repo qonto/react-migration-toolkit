@@ -1,6 +1,6 @@
 import type ApplicationInstance from '@ember/application/instance';
 import { useContext } from 'react';
-import { ApplicationContext } from '../contexts/application-context.tsx';
+import { ApplicationContext } from '../contexts/application-context';
 
 /**
  * Expose the owner of the application instance in charge of the Bridge component rendering this context
