@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import {
   PolymorphicIntlContext,
   type PolymorphicIntl,
-} from '../contexts/polymorphic-intl-context.tsx';
+} from '../contexts/polymorphic-intl-context';
 
 export const useIntl = (): PolymorphicIntl => {
   const intl = useContext(PolymorphicIntlContext);

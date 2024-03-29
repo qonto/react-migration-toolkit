@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import {
   PolymorphicRouterContext,
   type PolymorphicRouter,
-} from '../contexts/polymorphic-router-context.tsx';
+} from '../contexts/polymorphic-router-context';
 
 export const useRouter = (): PolymorphicRouter => {
   const router = useContext(PolymorphicRouterContext);

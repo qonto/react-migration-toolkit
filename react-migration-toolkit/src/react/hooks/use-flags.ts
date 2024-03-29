@@ -1,8 +1,5 @@
 import { useContext } from 'react';
-import {
-  type LDFlagSet,
-  LDContext,
-} from '../contexts/launchdarkly-context.tsx';
+import { type LDFlagSet, LDContext } from '../contexts/launchdarkly-context';
 
 export const useFlags = (): LDFlagSet => {
   const allFlags = useContext(LDContext);

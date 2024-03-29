@@ -14,6 +14,9 @@ module.exports = function (defaults) {
   return maybeEmbroider(app, {
     packagerOptions: {
       webpackConfig: {
+        resolve: {
+          extensions: ['.js', '.ts', '.tsx'],
+        },
         module: {
           rules: [
             {

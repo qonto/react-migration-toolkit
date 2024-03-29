@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import type { PropsWithChildren, ReactNode } from 'react';
 import type ApplicationInstance from '@ember/application/instance';
-import { ApplicationProvider } from '../contexts/application-context.tsx';
+import { ApplicationProvider } from '../contexts/application-context';
 import type { CustomProviderOptions } from '../../../types';
 
 interface AppProps {
