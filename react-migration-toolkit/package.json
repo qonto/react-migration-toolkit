@@ -17,6 +17,14 @@
       "types": "./declarations/react/components/*.d.ts",
       "default": "./dist/react/components/*.jsx"
     },
+    "./react/hooks": {
+      "types": "./declarations/react/hooks/index.d.ts",
+      "default": "./dist/react/hooks/index.js"
+    },
+    "./react/hooks/providers": {
+      "types": "./declarations/react/hooks/providers/index.d.ts",
+      "default": "./dist/react/hooks/providers/index.js"
+    },
     ".": {
       "types": "./declarations/index.d.ts",
       "default": "./dist/index.js"

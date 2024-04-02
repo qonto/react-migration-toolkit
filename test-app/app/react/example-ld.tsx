@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { useFlags } from "react-migration-toolkit/react/hooks/use-flags";
+import { useFlags } from "react-migration-toolkit/react/hooks";
 
 export function ExampleWithLD(): ReactNode {
   const { featureExperimentA } = useFlags();
