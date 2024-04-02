@@ -1,7 +1,9 @@
 import ApplicationInstance from "@ember/application/instance";
 import { type ReactNode } from "react";
-import { useApplicationInstance } from "react-migration-toolkit/react/hooks/use-application-instance";
-import { useEmberService } from "react-migration-toolkit/react/hooks/use-ember-service";
+import {
+  useEmberService,
+  useApplicationInstance,
+} from "react-migration-toolkit/react/hooks";
 import { useTheme } from "./theme-context.tsx";
 
 interface ExampleProps {

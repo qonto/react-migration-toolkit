@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { useIntl } from "react-migration-toolkit/react/hooks/use-intl";
+import { useIntl } from "react-migration-toolkit/react/hooks";
 
 export function ExampleIntl(): ReactNode {
   const { t } = useIntl();

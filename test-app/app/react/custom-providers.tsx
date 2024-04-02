@@ -2,8 +2,10 @@ import type { PropsWithChildren, ReactNode } from "react";
 import { ThemeProvider } from "./theme-context.tsx";
 import { PolymorphicIntlProvider } from "react-migration-toolkit/react/contexts/polymorphic-intl-context";
 import { PolymorphicRouterContextProvider } from "react-migration-toolkit/react/contexts/polymorphic-router-context";
-import { useEmberIntl } from "react-migration-toolkit/react/hooks/use-ember-intl";
-import { useEmberRouter } from "react-migration-toolkit/react/hooks/use-ember-router";
+import {
+  useEmberIntl,
+  useEmberRouter,
+} from "react-migration-toolkit/react/hooks/providers";
 
 export function CustomProviders({ children }: PropsWithChildren): ReactNode {
   const intl = useEmberIntl();

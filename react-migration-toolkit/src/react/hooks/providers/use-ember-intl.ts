@@ -1,7 +1,7 @@
 import { useCallback, useSyncExternalStore } from 'react';
 import type Service from '@ember/service';
-import { useEmberService } from './use-ember-service.ts';
-import type { PolymorphicIntl } from '../contexts/polymorphic-intl-context';
+import { useEmberService } from '../use-ember-service';
+import type { PolymorphicIntl } from '../../contexts/polymorphic-intl-context';
 
 interface IntlServiceBase extends PolymorphicIntl, Service {
   _ee: {
