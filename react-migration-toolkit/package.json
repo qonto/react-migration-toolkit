@@ -13,9 +13,9 @@
       "types": "./declarations/react/contexts/index.d.ts",
       "default": "./dist/react/contexts/index.js"
     },
-    "./react/components/*": {
-      "types": "./declarations/react/components/*.d.ts",
-      "default": "./dist/react/components/*.jsx"
+    "./react/components": {
+      "types": "./declarations/react/components/index.d.ts",
+      "default": "./dist/react/components/index.js"
     },
     "./react/hooks": {
       "types": "./declarations/react/hooks/index.d.ts",
@@ -24,10 +24,6 @@
     "./react/hooks/providers": {
       "types": "./declarations/react/hooks/providers/index.d.ts",
       "default": "./dist/react/hooks/providers/index.js"
-    },
-    ".": {
-      "types": "./declarations/index.d.ts",
-      "default": "./dist/index.js"
     },
     "./*": {
       "types": "./declarations/*.d.ts",
