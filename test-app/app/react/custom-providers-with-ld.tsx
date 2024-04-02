@@ -2,7 +2,7 @@ import type { PropsWithChildren, ReactNode } from "react";
 import {
   type LDFlagSet,
   LDProvider,
-} from "react-migration-toolkit/react/contexts/launchdarkly-context";
+} from "react-migration-toolkit/react/providers";
 
 export function CustomProvidersWithLD({
   children,

@@ -8,7 +8,7 @@ export interface PolymorphicIntl {
   formatMoney: (amount: number, opts?: object) => string; // adding it for now to ease integration,
 }
 
-interface RouterContextProviderProps {
+interface IntlContextProviderProps {
   intl: PolymorphicIntl;
   children: ReactNode;
 }
@@ -17,10 +17,10 @@ export const PolymorphicIntlContext = createContext<PolymorphicIntl | null>(
   null,
 );
 
-export function PolymorphicIntlProvider({
+export function PolymorphicIntlContextProvider({
   children,
   intl,
-}: RouterContextProviderProps): ReactNode {
+}: IntlContextProviderProps): ReactNode {
   return (
     <PolymorphicIntlContext.Provider value={intl}>
       {children}

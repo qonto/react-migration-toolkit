@@ -1,6 +1,6 @@
 import type { RegisterOptions } from '@ember/owner';
 import type { Registry } from '@ember/service';
-import { useApplicationInstance } from './use-application-instance.ts';
+import { useApplicationInstance } from './use-application-instance';
 
 /**
  * Expose dependency injection for Ember services in React components

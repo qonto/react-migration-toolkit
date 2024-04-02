@@ -9,9 +9,9 @@
   "license": "MIT",
   "author": "",
   "exports": {
-    "./react/contexts/*": {
-      "types": "./declarations/react/contexts/*.d.ts",
-      "default": "./dist/react/contexts/*.jsx"
+    "./react/providers": {
+      "types": "./declarations/react/contexts/index.d.ts",
+      "default": "./dist/react/contexts/index.js"
     },
     "./react/components/*": {
       "types": "./declarations/react/components/*.d.ts",
