@@ -1,7 +1,9 @@
 import type { PropsWithChildren, ReactNode } from "react";
 import { ThemeProvider } from "./theme-context.tsx";
-import { PolymorphicIntlProvider } from "react-migration-toolkit/react/contexts/polymorphic-intl-context";
-import { PolymorphicRouterContextProvider } from "react-migration-toolkit/react/contexts/polymorphic-router-context";
+import {
+  PolymorphicIntlContextProvider,
+  PolymorphicRouterContextProvider,
+} from "react-migration-toolkit/react/providers";
 import {
   useEmberIntl,
   useEmberRouter,
@@ -14,9 +16,9 @@ export function CustomProviders({ children }: PropsWithChildren): ReactNode {
   return (
     <ThemeProvider theme={{ current: "light" }} data-test-providers>
       <PolymorphicRouterContextProvider router={router}>
-        <PolymorphicIntlProvider intl={intl}>
+        <PolymorphicIntlContextProvider intl={intl}>
           {children}
-        </PolymorphicIntlProvider>
+        </PolymorphicIntlContextProvider>
       </PolymorphicRouterContextProvider>
     </ThemeProvider>
   );
