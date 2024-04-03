@@ -27,9 +27,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.24.0",
-    "@babel/preset-env": "7.24.0",
-    "@babel/preset-react": "7.23.3",
-    "@babel/preset-typescript": "7.23.3",
+    "@babel/preset-env": "7.24.1",
+    "@babel/preset-react": "7.24.1",
+    "@babel/preset-typescript": "7.24.1",
     "@ember/optional-features": "2.1.0",
     "@ember/string": "3.1.1",
     "@ember/test-helpers": "3.3.0",
