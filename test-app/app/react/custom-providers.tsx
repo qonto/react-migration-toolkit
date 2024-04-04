@@ -3,11 +3,11 @@ import { ThemeProvider } from "./theme-context.tsx";
 import {
   PolymorphicIntlContextProvider,
   PolymorphicRouterContextProvider,
-} from "react-migration-toolkit/react/providers";
+} from "@qonto/react-migration-toolkit/react/providers";
 import {
   useEmberIntl,
   useEmberRouter,
-} from "react-migration-toolkit/react/hooks/providers";
+} from "@qonto/react-migration-toolkit/react/hooks/providers";
 
 export function CustomProviders({ children }: PropsWithChildren): ReactNode {
   const intl = useEmberIntl();

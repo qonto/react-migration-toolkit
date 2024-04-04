@@ -1,5 +1,5 @@
-import { Link } from "react-migration-toolkit/react/components";
-import { useRouter } from "react-migration-toolkit/react/hooks";
+import { Link } from "@qonto/react-migration-toolkit/react/components";
+import { useRouter } from "@qonto/react-migration-toolkit/react/hooks";
 
 export function ExampleRouting() {
   const router = useRouter();
