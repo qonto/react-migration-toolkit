@@ -1,0 +1,7 @@
+/* 
+  * Used to remove the wrapper box from the DOM. 
+  * Avoids breaking existing layouts by introducing a new node when using the bridge.
+*/
+.react-bridge-wrapper {
+  display: contents;
+}
