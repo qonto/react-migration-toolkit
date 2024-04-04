@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import {
   useEmberService,
   useApplicationInstance,
-} from "react-migration-toolkit/react/hooks";
+} from "@qonto/react-migration-toolkit/react/hooks";
 import { useTheme } from "./theme-context.tsx";
 
 interface ExampleProps {
