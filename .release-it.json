@@ -7,7 +7,7 @@
       "infile": "CHANGELOG.md"
     },
     "@release-it-plugins/workspaces": {
-      "publish": true
+      "publish": false
     }
   },
   "git": {
