@@ -109,8 +109,8 @@ importers:
         specifier: 15.2.3
         version: 15.2.3(rollup@4.13.0)
       '@tsconfig/ember':
-        specifier: 3.0.5
-        version: 3.0.5
+        specifier: 3.0.6
+        version: 3.0.6
       '@types/ember':
         specifier: 4.0.11
         version: 4.0.11(@babel/core@7.24.0)
@@ -290,8 +290,8 @@ importers:
         specifier: workspace:*
         version: link:../react-migration-toolkit
       '@tsconfig/ember':
-        specifier: 3.0.5
-        version: 3.0.5
+        specifier: 3.0.6
+        version: 3.0.6
       '@types/ember':
         specifier: 4.0.11
         version: 4.0.11(@babel/core@7.24.0)
@@ -4444,8 +4444,8 @@ packages:
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
     dev: true
 
-  /@tsconfig/ember@3.0.5:
-    resolution: {integrity: sha512-5fccd/42M+ejFxAqA8uN+ZlYPhIwZFM2f3xpkmvdyQVrgBkJnsWqnCEXCBfhi6d+fBVDNnRNWiUwczJyFzmK1Q==}
+  /@tsconfig/ember@3.0.6:
+    resolution: {integrity: sha512-b1LmFAL5suTpQsaoG5NYpKAU8XfqQcob9gPu4xQlS/sNGD8Pp+vx+jI30Cy01+mxTBsQPig2kOwFpTD2b2qwtw==}
     dev: true
 
   /@types/acorn@4.0.6:
@@ -8570,7 +8570,7 @@ packages:
     resolution: {integrity: sha512-XA1FwkWA5QytmWF0jcJqEr3jcZoiCl9Fb33TZgOVfClL7Voxe+/RwzISEprBRQgbf7j8z1xf8/RJCKfclUy3rQ==}
     engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
-      ember-source: ^3.28.0 || >= 4.0.0
+      ember-source: '*'
     dependencies:
       ember-cli-babel: 7.26.11
       ember-source: 5.8.0(@babel/core@7.24.0)(@glimmer/component@1.1.2)(@glint/template@1.4.0)(rsvp@4.8.5)(webpack@5.91.0)
