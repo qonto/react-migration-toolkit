@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.0.6",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://gitlab.qonto.co/npm-packages/react-migration-toolkit.git"

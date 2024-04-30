@@ -1,5 +1,12 @@
 
 
+# [0.1.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.0.6...v0.1.0) (2024-04-30)
+
+
+### Features
+
+* add formatNumber to useEmberIntl ([3451aed](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/3451aede54771b52762ab728ef23b047e9e8a1c0))
+
 ## [0.0.6](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.0.5...v0.0.6) (2024-04-04)
 
 ## [0.0.5](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.0.4...v0.0.5) (2024-04-04)
