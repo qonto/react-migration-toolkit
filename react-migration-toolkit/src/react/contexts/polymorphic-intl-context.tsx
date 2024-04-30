@@ -5,7 +5,8 @@ export interface PolymorphicIntl {
   locale: string | [string, ...string[]];
   t: (key: string, opts?: Record<string, string | number>) => string;
   setLocale: (locale: string) => void;
-  formatMoney: (amount: number, opts?: object) => string; // adding it for now to ease integration,
+  formatMoney: (amount: number, opts?: object) => string;
+  formatNumber: (value: number, opts?: object) => string;
 }
 
 interface IntlContextProviderProps {

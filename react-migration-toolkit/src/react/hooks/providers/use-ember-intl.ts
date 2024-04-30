@@ -36,17 +36,20 @@ export function useEmberIntl(): PolymorphicIntl {
   }
 
   return {
-    formatMoney(amount, opts) {
-      return intlService.formatMoney(amount, opts);
-    },
     primaryLocale: locale,
     locale,
+    t(key, options) {
+      return intlService.t(key, options);
+    },
     setLocale(key: string) {
       // @ts-expect-error -- this is caused by the custom global declaration, until ember-intlv6 get merged
       localeManager?.setLocale(key);
     },
-    t(key, options) {
-      return intlService.t(key, options);
+    formatMoney(amount, opts) {
+      return intlService.formatMoney(amount, opts);
+    },
+    formatNumber(value, opts) {
+      return intlService.formatNumber(value, opts);
     },
   };
 }
