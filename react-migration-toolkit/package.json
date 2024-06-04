@@ -68,12 +68,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "7.24.0",
-    "@babel/plugin-transform-typescript": "7.24.1",
-    "@babel/preset-env": "7.24.0",
-    "@babel/preset-react": "7.24.1",
-    "@babel/preset-typescript": "7.24.1",
-    "@babel/runtime": "7.24.0",
+    "@babel/core": "7.24.6",
+    "@babel/plugin-transform-typescript": "7.24.6",
+    "@babel/preset-env": "7.24.6",
+    "@babel/preset-react": "7.24.6",
+    "@babel/preset-typescript": "7.24.6",
+    "@babel/runtime": "7.24.6",
     "@embroider/addon-dev": "4.2.1",
     "@embroider/macros": "1.15.0",
     "@glimmer/component": "1.1.2",
