@@ -10,7 +10,7 @@ import {
   type ComponentType,
 } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 import type ApplicationInstance from '@ember/application/instance';
 import { App } from '../react/app/app';
 import type { CustomProviderOptions } from '../../types';

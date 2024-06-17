@@ -69,7 +69,7 @@
     "@types/ember__test": "4.0.6",
     "@types/ember__utils": "4.0.7",
     "@types/qunit": "2.19.10",
-    "@types/react": "18.2.66",
+    "@types/react": "18.3.1",
     "@types/rsvp": "4.0.9",
     "@types/sinon": "17.0.3",
     "@typescript-eslint/eslint-plugin": "7.13.0",
@@ -126,8 +126,8 @@
   },
   "dependencies": {
     "ember-launch-darkly": "3.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sinon": "^17.0.1"
   }
 }

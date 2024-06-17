@@ -64,8 +64,8 @@
     "@embroider/addon-shim": "^1.8.7",
     "decorator-transforms": "^1.0.1",
     "ember-modifier": "^4.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@babel/core": "7.24.6",
@@ -105,8 +105,8 @@
     "@types/ember__template": "4.0.7",
     "@types/ember__test": "4.0.6",
     "@types/ember__utils": "4.0.7",
-    "@types/react": "18.2.66",
-    "@types/react-dom": "18.2.22",
+    "@types/react": "18.3.1",
+    "@types/react-dom": "18.3.0",
     "@typescript-eslint/eslint-plugin": "7.13.0",
     "@typescript-eslint/parser": "7.13.0",
     "babel-plugin-ember-template-compilation": "2.2.1",
