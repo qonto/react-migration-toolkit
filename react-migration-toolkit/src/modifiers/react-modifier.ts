@@ -64,6 +64,12 @@ export interface ReactModifierSignature {
   };
 }
 
+declare global {
+  interface Window {
+    IS_REACT_ACT_ENVIRONMENT: boolean;
+  }
+}
+
 export default class ReactModifier extends Modifier<ReactModifierSignature> {
   root: Root | null = null;
   children: ReactElement[] | null = null;
@@ -101,6 +107,7 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
     );
 
     if (macroCondition(isTesting())) {
+      window.IS_REACT_ACT_ENVIRONMENT = true;
       act(() => {
         this.root?.render(wrappedComponent);
       });
