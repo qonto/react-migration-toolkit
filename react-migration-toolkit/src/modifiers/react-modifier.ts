@@ -10,7 +10,7 @@ import {
   type ComponentType,
 } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
 import type ApplicationInstance from '@ember/application/instance';
 import { App } from '../react/app/app';
 import type { CustomProviderOptions } from '../../types';
@@ -64,6 +64,12 @@ export interface ReactModifierSignature {
   };
 }
 
+declare global {
+  interface Window {
+    IS_REACT_ACT_ENVIRONMENT: boolean;
+  }
+}
+
 export default class ReactModifier extends Modifier<ReactModifierSignature> {
   root: Root | null = null;
   children: ReactElement[] | null = null;
@@ -101,6 +107,7 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
     );
 
     if (macroCondition(isTesting())) {
+      window.IS_REACT_ACT_ENVIRONMENT = true;
       act(() => {
         this.root?.render(wrappedComponent);
       });
