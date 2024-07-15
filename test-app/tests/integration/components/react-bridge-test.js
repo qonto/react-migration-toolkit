@@ -176,4 +176,24 @@ module('Integration | Component | react-bridge', function (hooks) {
       assert.dom('[data-test-feature-experiment-a]').doesNotExist();
     });
   });
+
+  test('it defaults to a div if no tag name is passed as a prop', async function (assert) {
+    await render(hbs`
+      <ReactBridge @reactComponent={{this.reactExample}} />
+    `);
+
+    assert
+      .dom('div[data-test-react-bridge-component]')
+      .hasClass('react-bridge-wrapper');
+  });
+
+  test('it can accept a tag name as a prop', async function (assert) {
+    await render(hbs`
+      <ReactBridge @reactComponent={{this.reactExample}} @tagName="section" />
+    `);
+
+    assert
+      .dom('section[data-test-react-bridge-component]')
+      .doesNotHaveClass('react-bridge-wrapper');
+  });
 });

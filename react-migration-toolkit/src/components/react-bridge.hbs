@@ -1,15 +1,17 @@
 {{! @glint-nocheck }}
-<div
-  class='react-bridge-wrapper'
-  data-test-react-bridge-component
-  {{this.reactModifier
-    reactComponent=@reactComponent
-    props=@props
-    providerOptions=@providerOptions
-  }}
-  ...attributes
->
-  {{~#if (has-block)~}}
-    {{yield}}
-  {{/if}}
-</div>
+{{#let (element this.tagName) as |Tag|}}
+  <Tag
+    class={{unless @tagName 'react-bridge-wrapper'}}
+    data-test-react-bridge-component
+    {{this.reactModifier
+      reactComponent=@reactComponent
+      props=@props
+      providerOptions=@providerOptions
+    }}
+    ...attributes
+  >
+    {{~#if (has-block)~}}
+      {{yield}}
+    {{/if}}
+  </Tag>
+{{/let}}

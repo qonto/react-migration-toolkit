@@ -87,7 +87,12 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
     }
 
     const filteredChildNodes = Array.from(element.childNodes).filter(
-      ({ nodeType }) => nodeType !== Node.COMMENT_NODE,
+      ({ nodeType, textContent }) => {
+        if (nodeType === Node.TEXT_NODE) {
+          return String(textContent).trim() !== '';
+        }
+        return nodeType !== Node.COMMENT_NODE;
+      },
     );
     if (this.isInitialRender && filteredChildNodes.length > 0) {
       const children = [
