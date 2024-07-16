@@ -1,3 +1,12 @@
+
+
+## [0.2.2](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.1...v0.2.2) (2024-07-16)
+
+
+### Features
+
+- add the ability to pass a dynamic tagName replacing the default div ([320144d9](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/-/commit/320144d9511e2339d1fe8477fba4363abc00aeb0))
+
 ## [0.2.1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.0...v0.2.1) (2024-06-17)
 
 # [0.2.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.1.0...v0.2.0) (2024-05-23)
