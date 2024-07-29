@@ -16,7 +16,9 @@ import { App } from '../react/app/app';
 import type { CustomProviderOptions } from '../../types';
 
 function cleanup(instance: ReactModifier) {
-  instance.root?.unmount();
+  act(() => {
+    instance.root?.unmount();
+  });
 }
 
 interface YieldWrapperProps {
