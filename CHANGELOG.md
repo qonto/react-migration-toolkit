@@ -1,5 +1,12 @@
 
 
+## [0.2.3](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.2...v0.2.3) (2024-07-29)
+
+
+### Bug Fixes
+
+* wrap cleanup function in act ([76ac621](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/76ac621499f453f0c5fa389e55f7f1331dd2a9dd))
+
 ## [0.2.2](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.1...v0.2.2) (2024-07-16)
 
 
