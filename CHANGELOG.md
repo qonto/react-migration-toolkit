@@ -1,5 +1,12 @@
 
 
+# [0.3.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.4...v0.3.0) (2024-07-30)
+
+
+### Features
+
+* add exists Intl utility function to Intl hooks return type ([a52e6ac](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/a52e6ac9f01398d286a7ea4728b3343f42c85c6c))
+
 ## [0.2.4](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.3...v0.2.4) (2024-07-30)
 
 ## [0.2.3](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.2...v0.2.3) (2024-07-29)
