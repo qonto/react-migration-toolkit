@@ -48,6 +48,9 @@ export function useEmberIntl(): PolymorphicIntl {
     exists(key, locale) {
       return intlService.exists(key, locale);
     },
+    formatCountry(value, opts) {
+      return intlService.formatCountry(value, opts);
+    },
     formatMoney(amount, opts) {
       return intlService.formatMoney(amount, opts);
     },
