@@ -1,5 +1,12 @@
 
 
+# [0.4.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.3.0...v0.4.0) (2024-07-30)
+
+
+### Features
+
+* add formatCountry Intl utility function to Intl hooks return type ([8b298d2](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/8b298d243bc70b2590297a07484627181b017f89))
+
 # [0.3.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.2.4...v0.3.0) (2024-07-30)
 
 
