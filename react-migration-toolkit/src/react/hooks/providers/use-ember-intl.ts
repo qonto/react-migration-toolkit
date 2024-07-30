@@ -45,6 +45,9 @@ export function useEmberIntl(): PolymorphicIntl {
       // @ts-expect-error -- this is caused by the custom global declaration, until ember-intlv6 get merged
       localeManager?.setLocale(key);
     },
+    exists(key, locale) {
+      return intlService.exists(key, locale);
+    },
     formatMoney(amount, opts) {
       return intlService.formatMoney(amount, opts);
     },
