@@ -5,6 +5,7 @@ export interface PolymorphicIntl {
   locale: string | [string, ...string[]];
   t: (key: string, opts?: Record<string, string | number>) => string;
   setLocale: (locale: string) => void;
+  exists: (key: string, locale?: string) => boolean;
   formatMoney: (amount: number, opts?: object) => string;
   formatNumber: (value: number, opts?: object) => string;
 }
