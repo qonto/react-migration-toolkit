@@ -3,17 +3,16 @@ import { getOwner } from '@ember/application';
 
 import { isTesting, macroCondition } from '@embroider/macros';
 import Modifier from 'ember-modifier';
-import {
-  createElement,
-  Component as ReactComponent,
-  type ReactElement,
-  type ComponentType,
-} from 'react';
+import { createElement, type ReactElement, type ComponentType } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { act } from 'react';
 import type ApplicationInstance from '@ember/application/instance';
 import { App } from '../react/app/app';
 import type { CustomProviderOptions } from '../../types';
+import {
+  YieldWrapper,
+  type YieldWrapperProps,
+} from '../components/yield-wrapper';
 
 function cleanup(instance: ReactModifier) {
   if (macroCondition(isTesting())) {
@@ -23,37 +22,6 @@ function cleanup(instance: ReactModifier) {
     });
   } else {
     instance.root?.unmount();
-  }
-}
-
-interface YieldWrapperProps {
-  nodes: ChildNode[];
-}
-
-class YieldWrapper extends ReactComponent<YieldWrapperProps> {
-  el: HTMLElement | null = null;
-
-  componentDidMount() {
-    // Current element, ie <span>
-    const element = this.el;
-
-    // Only runs on first render (strict mode renders twice and parentNode is undefined on 2nd render)
-    if (element?.parentNode) {
-      const fragment = document.createDocumentFragment();
-      for (const node of this.props.nodes) {
-        fragment.appendChild(node);
-      }
-
-      // Replace <span> by fragment with appended nodes
-      element.parentNode.replaceChild(fragment, element);
-    }
-  }
-
-  render() {
-    // This element is temporary. When mounted, it is replaced by the children nodes received from Ember.
-    return createElement('span', {
-      ref: (el) => (this.el = el),
-    });
   }
 }
 
