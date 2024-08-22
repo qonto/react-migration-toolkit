@@ -17,10 +17,10 @@ export function useEmberIntl(): PolymorphicIntl {
   const subscribeToLocaleChange = useCallback(
     (callback: () => void) => {
       // This is an internal property, but we need it to subscribe to locale changes
-      intlService._ee.on('localChanged', callback, null);
+      intlService._ee.on('localeChanged', callback, null);
       return () => {
         // This is an internal property, but we need it to unsubscribe to locale changes
-        intlService._ee.off('localChanged', callback, null);
+        intlService._ee.off('localeChanged', callback, null);
       };
     },
     [intlService],
