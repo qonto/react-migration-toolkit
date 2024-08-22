@@ -1,5 +1,12 @@
 
 
+## [0.4.1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.4.0...v0.4.1) (2024-08-22)
+
+
+### Bug Fixes
+
+* fix typo in the event name preventing hook to subscribe to locale change ([e547659](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/e54765974bcee3863144edcc52e9e748abd3b024))
+
 # [0.4.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.3.0...v0.4.0) (2024-07-30)
 
 
