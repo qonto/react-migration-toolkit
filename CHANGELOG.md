@@ -1,5 +1,12 @@
 
 
+## [0.4.2](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.4.1...v0.4.2) (2024-09-05)
+
+
+### Bug Fixes
+
+* only render yield wrapper when the has-block helper is truthy ([998b10e](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/998b10eb521223bb39ecd082310dffa3ba607205))
+
 ## [0.4.1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.4.0...v0.4.1) (2024-08-22)
 
 
