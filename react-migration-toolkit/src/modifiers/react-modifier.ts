@@ -61,6 +61,7 @@ type ReactModifierOptions = {
   reactComponent: ComponentType;
   props: object;
   providerOptions: CustomProviderOptions | undefined;
+  hasBlock: boolean;
 };
 
 export interface ReactModifierSignature {
@@ -86,7 +87,7 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
   modify(
     element: Element,
     positional: null,
-    { reactComponent, props, providerOptions }: ReactModifierOptions,
+    { reactComponent, props, providerOptions, hasBlock }: ReactModifierOptions,
   ) {
     if (!this.root) {
       this.root = createRoot(element);
@@ -101,7 +102,7 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
         return nodeType !== Node.COMMENT_NODE;
       },
     );
-    if (this.isInitialRender && filteredChildNodes.length > 0) {
+    if (this.isInitialRender && filteredChildNodes.length > 0 && hasBlock) {
       const children = [
         createElement<YieldWrapperProps>(YieldWrapper, {
           key: crypto.randomUUID(),
