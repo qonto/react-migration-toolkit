@@ -4,9 +4,12 @@
 import '@glint/environment-ember-loose';
 import '@glint/environment-ember-template-imports';
 import type EmberElementHelperRegistry from 'ember-element-helper/template-registry';
+import type EmberIntlRegistry from 'ember-intl/template-registry';
+
 declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry
-    extends EmberElementHelperRegistry /* other addon registries */ {
+    extends EmberElementHelperRegistry,
+      EmberIntlRegistry /* other addon registries */ {
     // local entries
   }
 }

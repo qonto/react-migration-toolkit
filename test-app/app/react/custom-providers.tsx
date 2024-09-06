@@ -1,13 +1,11 @@
 import type { PropsWithChildren, ReactNode } from "react";
 import { ThemeProvider } from "./theme-context.tsx";
-import {
-  PolymorphicIntlContextProvider,
-  PolymorphicRouterContextProvider,
-} from "@qonto/react-migration-toolkit/react/providers";
+import { PolymorphicRouterContextProvider } from "@qonto/react-migration-toolkit/react/providers";
 import {
   useEmberIntl,
   useEmberRouter,
 } from "@qonto/react-migration-toolkit/react/hooks/providers";
+import { RawIntlProvider } from "react-intl";
 
 export function CustomProviders({ children }: PropsWithChildren): ReactNode {
   const intl = useEmberIntl();
@@ -16,9 +14,7 @@ export function CustomProviders({ children }: PropsWithChildren): ReactNode {
   return (
     <ThemeProvider theme={{ current: "light" }} data-test-providers>
       <PolymorphicRouterContextProvider router={router}>
-        <PolymorphicIntlContextProvider intl={intl}>
-          {children}
-        </PolymorphicIntlContextProvider>
+        <RawIntlProvider value={intl}>{children}</RawIntlProvider>
       </PolymorphicRouterContextProvider>
     </ThemeProvider>
   );
