@@ -1,8 +1,10 @@
 import { type ReactNode } from "react";
-import { useIntl } from "@qonto/react-migration-toolkit/react/hooks";
+import { FormattedMessage } from "react-intl";
 
 export function ExampleIntl(): ReactNode {
-  const { t } = useIntl();
-
-  return <h1>{t("welcome.message", { name: "React" })}</h1>;
+  return (
+    <h1>
+      <FormattedMessage id="welcome.message" values={{ name: "React" }} />
+    </h1>
+  );
 }

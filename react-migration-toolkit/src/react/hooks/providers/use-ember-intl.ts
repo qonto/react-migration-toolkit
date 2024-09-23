@@ -1,61 +1,35 @@
 import { useCallback, useSyncExternalStore } from 'react';
-import type Service from '@ember/service';
 import { useEmberService } from '../use-ember-service';
-import type { PolymorphicIntl } from '../../contexts/polymorphic-intl-context';
+import { type IntlShape } from 'react-intl';
 
-interface IntlServiceBase extends PolymorphicIntl, Service {
-  _ee: {
-    on: (eventName: string, callback: unknown, context: unknown) => void;
-    off: (eventName: string, callback: unknown, context: unknown) => void;
-  };
-}
-
-export function useEmberIntl(): PolymorphicIntl {
-  const intlService = useEmberService('intl') as unknown as IntlServiceBase;
-  const localeManager = useEmberService('locale-manager'); // locale-manager handles importing translations on locale change so have to use it here
+export function useEmberIntl(): IntlShape {
+  const emberIntl = useEmberService('intl');
 
   const subscribeToLocaleChange = useCallback(
     (callback: () => void) => {
-      // This is an internal property, but we need it to subscribe to locale changes
-      intlService._ee.on('localeChanged', callback, null);
+      //@ts-expect-error This is an internal property, but we need it to subscribe to locale changes
+      emberIntl._ee.on('localeChanged', callback, null);
       return () => {
-        // This is an internal property, but we need it to unsubscribe to locale changes
-        intlService._ee.off('localeChanged', callback, null);
+        //@ts-expect-error This is an internal property, but we need it to unsubscribe to locale changes
+        emberIntl._ee.off('localeChanged', callback, null);
       };
     },
-    [intlService],
+    [emberIntl],
   );
 
   const locale = useSyncExternalStore(
     subscribeToLocaleChange,
-    () => intlService?.primaryLocale,
+    () => emberIntl.primaryLocale,
   );
 
   if (!locale) {
-    throw new Error('Intl service not available');
+    throw new Error(
+      'Intl service not available, make sure ember-intl is installed',
+    );
   }
 
-  return {
-    primaryLocale: locale,
-    locale,
-    t(key, options) {
-      return intlService.t(key, options);
-    },
-    setLocale(key: string) {
-      // @ts-expect-error -- this is caused by the custom global declaration, until ember-intlv6 get merged
-      localeManager?.setLocale(key);
-    },
-    exists(key, locale) {
-      return intlService.exists(key, locale);
-    },
-    formatCountry(value, opts) {
-      return intlService.formatCountry(value, opts);
-    },
-    formatMoney(amount, opts) {
-      return intlService.formatMoney(amount, opts);
-    },
-    formatNumber(value, opts) {
-      return intlService.formatNumber(value, opts);
-    },
-  };
+  return (
+    //@ts-expect-error emberIntl.getIntl is a private method
+    emberIntl.getIntl(locale)
+  );
 }
