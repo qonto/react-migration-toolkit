@@ -34,6 +34,9 @@
   "pnpm": {
     "overrides": {
       "@types/eslint": "^7.0.0"
+    },
+    "patchedDependencies": {
+      "@glint/template": "patches/@glint__template.patch"
     }
   },
   "packageManager": "pnpm@9.11.0"
