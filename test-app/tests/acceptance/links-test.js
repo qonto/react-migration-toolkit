@@ -6,7 +6,7 @@ import sinon from 'sinon';
 
 module('Acceptance | links', function (hooks) {
   setupApplicationTest(hooks);
-  setupIntl(hooks);
+  setupIntl(hooks, 'en-us');
 
   test('should navigate to the about page', async function (assert) {
     await visit('/links');

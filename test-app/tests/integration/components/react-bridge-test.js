@@ -15,7 +15,7 @@ import { getCurrentContext } from 'ember-launch-darkly/-sdk/context';
 
 module('Integration | Component | react-bridge', function (hooks) {
   setupRenderingTest(hooks);
-  setupIntl(hooks);
+  setupIntl(hooks, 'en-us');
 
   hooks.beforeEach(function () {
     this.setProperties({

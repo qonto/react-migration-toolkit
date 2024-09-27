@@ -8,10 +8,10 @@ export function useEmberIntl(): IntlShape {
   const subscribeToLocaleChange = useCallback(
     (callback: () => void) => {
       //@ts-expect-error This is an internal property, but we need it to subscribe to locale changes
-      emberIntl._ee.on('localeChanged', callback, null);
+      emberIntl._eventEmitter.on('localeChanged', callback, null);
       return () => {
         //@ts-expect-error This is an internal property, but we need it to unsubscribe to locale changes
-        emberIntl._ee.off('localeChanged', callback, null);
+        emberIntl._eventEmitter.off('localeChanged', callback, null);
       };
     },
     [emberIntl],
