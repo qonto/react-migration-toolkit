@@ -1,0 +1,13 @@
+diff --git a/-private/signature.d.ts b/-private/signature.d.ts
+index b674b2c6d6cd56a741b5fa964b0509899c1dd3a8..0f54948ee315e9b9486a4d9c8a709c461cded26f 100644
+--- a/-private/signature.d.ts
++++ b/-private/signature.d.ts
+@@ -45,7 +45,7 @@ export type ComponentSignatureBlocks<S> = S extends { Blocks: infer Blocks }
+ 
+ /** Given a component signature `S`, get back the `Element` type. */
+ export type ComponentSignatureElement<S> = S extends { Element: infer Element }
+-  ? NonNullable<Element> extends never
++  ? Element extends null
+     ? unknown
+     : Element
+   : unknown;
