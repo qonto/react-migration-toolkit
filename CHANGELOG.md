@@ -1,3 +1,17 @@
+
+
+# [1.1.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.0.0...v1.1.0) (2024-10-02)
+
+
+### Bug Fixes
+
+* patch glint issue with dynamic tag resolution ([bbc1b57](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/bbc1b57f76a26fc0c2f98f92ccf0b899864c8b64))
+
+
+### Features
+
+* use intl._eventEmitter instead of _ee to listen for locale changes ([fb8b38d](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/fb8b38d4ca0a286c1ac520483b686f360a5c826b))
+
 # [1.0.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.4.2...v1.0.0) (2024-09-24)
 
 ### Features
