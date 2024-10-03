@@ -1,8 +1,30 @@
 {
   "presets": [
-    ["@babel/preset-typescript", { "onlyRemoveTypeImports": true }],
-    "@babel/preset-env",
-    ["@babel/preset-react", { "runtime": "automatic" }]
+    [
+      "@babel/preset-typescript",
+      {
+        "onlyRemoveTypeImports": true,
+        "allExtensions": true,
+        "allowDeclareFields": true
+      }
+    ]
+  ],
+  "overrides": [
+    {
+      "test": "**/*.tsx",
+      "presets": [
+        ["@babel/preset-react", { "runtime": "automatic" }],
+        [
+          "@babel/preset-typescript",
+          {
+            "isTSX": true,
+            "onlyRemoveTypeImports": true,
+            "allExtensions": true,
+            "allowDeclareFields": true
+          }
+        ]
+      ]
+    }
   ],
   "plugins": [
     "@embroider/addon-dev/template-colocation-plugin",
