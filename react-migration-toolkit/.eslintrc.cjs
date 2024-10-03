@@ -2,41 +2,57 @@
 
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 'latest',
-  },
-  plugins: ['ember'],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended',
-    'plugin:prettier/recommended',
-  ],
-  env: {
-    browser: true,
-  },
-  rules: {},
+  // Only use overrides
+  // https://github.com/ember-cli/eslint-plugin-ember?tab=readme-ov-file#gtsgjs
   overrides: [
-    // gts files
     {
-      files: ['**/*.gts'],
-      parser: 'ember-eslint-parser',
+      files: ['**/*.js', '**/*.ts', '**/*.tsx'],
+      env: { browser: true },
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 'latest',
+      },
+      plugins: ['ember'],
       extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:ember/recommended-gts',
+        'eslint:recommended',
+        'plugin:ember/recommended',
+        'plugin:prettier/recommended',
       ],
     },
     // ts files
     {
       files: ['**/*.ts', '**/*.tsx'],
       extends: [
+        'eslint:recommended',
+        'plugin:ember/recommended',
         'plugin:@typescript-eslint/eslint-recommended',
         'plugin:@typescript-eslint/recommended',
+        'plugin:prettier/recommended',
       ],
-      rules: {
-        // Add any custom rules here
-      },
+    },
+    {
+      files: ['**/*.gts'],
+      parser: 'ember-eslint-parser',
+      plugins: ['ember'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:ember/recommended',
+        'plugin:ember/recommended-gts',
+        'plugin:prettier/recommended',
+      ],
+    },
+    {
+      files: ['**/*.gjs'],
+      parser: 'ember-eslint-parser',
+      plugins: ['ember'],
+      extends: [
+        'eslint:recommended',
+        'plugin:ember/recommended',
+        'plugin:ember/recommended-gjs',
+        'plugin:prettier/recommended',
+      ],
     },
     // node files
     {
@@ -54,7 +70,11 @@ module.exports = {
         node: true,
       },
       plugins: ['n'],
-      extends: ['plugin:n/recommended'],
+      extends: [
+        'eslint:recommended',
+        'plugin:n/recommended',
+        'plugin:prettier/recommended',
+      ],
     },
   ],
 };

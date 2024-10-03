@@ -8,6 +8,25 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "declarationDir": "declarations",
+    /**
+      https://www.typescriptlang.org/tsconfig#noEmit
+
+      We want to emit declarations, so this option must be set to `false`.
+      @tsconfig/ember sets this to `true`, which is incompatible with our need to set `emitDeclarationOnly`.
+      @tsconfig/ember is more optimized for apps, which wouldn't emit anything, only type check.
+    */
+    "noEmit": false,
+    /**
+      https://www.typescriptlang.org/tsconfig#emitDeclarationOnly
+      We want to only emit declarations as we use Rollup to emit JavaScript.
+    */
+    "emitDeclarationOnly": true,
+
+    /**
+      https://www.typescriptlang.org/tsconfig#noEmitOnError
+      Do not block emit on TS errors.
+    */
+    "noEmitOnError": false,
 
     /**
       https://www.typescriptlang.org/tsconfig#rootDir
@@ -20,14 +39,6 @@
       imports to files on disk
     */
     "rootDir": "./src",
-
-    /**
-      https://www.typescriptlang.org/tsconfig#verbatimModuleSyntax
-
-      We don't want to include types dependencies in our compiled output, so tell TypeScript
-      to enforce using `import type` instead of `import` for Types.
-     */
-    "verbatimModuleSyntax": true,
 
     /**
       https://www.typescriptlang.org/tsconfig#allowImportingTsExtensions

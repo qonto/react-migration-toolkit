@@ -13,7 +13,7 @@
     "lint:fix": "pnpm --filter '*' lint:fix",
     "prepare": "pnpm build",
     "release": "release-it",
-    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start": "concurrently 'pnpm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm --filter react-migration-toolkit start --no-watch.clearScreen",
     "start:test-app": "pnpm --filter test-app start",
     "test": "pnpm --filter '*' test",
@@ -28,7 +28,7 @@
     "concurrently": "8.2.2",
     "lefthook": "1.6.8",
     "prettier": "3.3.3",
-    "prettier-plugin-ember-template-tag": "1.1.0",
+    "prettier-plugin-ember-template-tag": "2.0.2",
     "release-it": "17.2.0"
   },
   "pnpm": {
