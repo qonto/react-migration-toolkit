@@ -2,27 +2,27 @@ import Component from '@glimmer/component';
 import reactModifier from '../modifiers/react-modifier.ts';
 import './react-bridge.css';
 
-import {
-  element,
-  type ElementSignature,
-  type ElementFromTagName,
-} from 'ember-element-helper';
+import { element, type ElementFromTagName } from 'ember-element-helper';
 
-interface ReactBridgeArgs<T extends string = 'div'> {
+interface ReactBridgeArgs<T extends keyof HTMLElementTagNameMap> {
   Element: ElementFromTagName<T>;
-  tagName?: ElementSignature<T>;
   Args: {
-    tagName?: ElementSignature<T>['Return'];
+    tagName?: T;
+  };
+  Blocks: {
+    default?: [];
   };
 }
-export default class ReactBridge extends Component<ReactBridgeArgs> {
-  tagName = this.args.tagName || 'div';
+export default class ReactBridge<
+  T extends keyof HTMLElementTagNameMap, // we only want to allow valid HTML tag names
+> extends Component<ReactBridgeArgs<T>> {
+  tagName = (this.args.tagName ?? 'div') as T;
   <template>
-    {{! @glint-nocheck }}
     {{#let (element this.tagName) as |Tag|}}
       <Tag
         class={{unless @tagName 'react-bridge-wrapper'}}
         data-test-react-bridge-component
+        {{! @glint-nocheck }}
         {{reactModifier
           reactComponent=@reactComponent
           props=@props
