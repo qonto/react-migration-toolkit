@@ -42,6 +42,9 @@ module.exports = {
         'plugin:ember/recommended-gts',
         'plugin:prettier/recommended',
       ],
+      globals: {
+        HTMLElementTagNameMap: true,
+      },
     },
     {
       files: ['**/*.gjs'],
