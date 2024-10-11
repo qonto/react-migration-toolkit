@@ -5,3 +5,9 @@
 >
   <p>Hello from children</p>
 </ReactBridge>
+
+<ReactBridge
+  @reactComponent={{this.reactExample}}
+  @props={{hash text=this.safeText data-test-example="true"}}
+  class="class-from-bridge"
+/>
