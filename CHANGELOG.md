@@ -1,5 +1,18 @@
 
 
+# [1.2.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.1.0...v1.2.0) (2024-10-14)
+
+
+### Bug Fixes
+
+* **types:** fix [@tag](https://gitlab.qonto.co/tag)Name types, infer attributes and fix yield block types ([05fe736](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/05fe736571b161942cf9627890105b74116ecd98))
+
+
+### Features
+
+* ** react bridge:** handle safe strings ([2c35ef1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/2c35ef137e5d7d1ae1b8e7cbda59eb03927b89ef))
+* **types:** infer prop types in reactbridge ([5fc42bf](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/5fc42bffebbcada36c6fecb4c9ab9bd589a923f9))
+
 # [1.1.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.0.0...v1.1.0) (2024-10-02)
 
 
