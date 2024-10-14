@@ -3,6 +3,8 @@ import { hbs } from 'ember-cli-htmlbars';
 import Service from '@ember/service';
 import { render, rerender, settled } from '@ember/test-helpers';
 import { tracked } from '@glimmer/tracking';
+import { htmlSafe } from '@ember/template';
+
 import { setupRenderingTest } from 'test-app/tests/helpers';
 import { Example } from 'test-app/react/example';
 import { ExampleIntl } from 'test-app/react/exampleIntl';
@@ -195,5 +197,30 @@ module('Integration | Component | react-bridge', function (hooks) {
     assert
       .dom('section[data-test-react-bridge-component]')
       .doesNotHaveClass('react-bridge-wrapper');
+  });
+
+  test('it can render legacy HTML translated content if passed as a safeString', async function (assert) {
+    let text = htmlSafe('Hello <a href="https://www.google.com">world</a>');
+
+    this.setProperties({
+      reactExample: Example,
+      props: {
+        text,
+      },
+    });
+
+    await render(hbs`
+      <ReactBridge
+        @reactComponent={{this.reactExample}}
+        @props={{hash text=this.props.text}}
+      >
+        <p>{{this.children.value}}</p>
+      </ReactBridge>
+    `);
+
+    assert
+      .dom('a')
+      .hasAttribute('href', 'https://www.google.com')
+      .hasText('world');
   });
 });

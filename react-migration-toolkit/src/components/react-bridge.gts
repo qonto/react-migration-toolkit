@@ -1,5 +1,7 @@
 import Component from '@glimmer/component';
 import reactModifier from '../modifiers/react-modifier.ts';
+import { mapLegacyHTMLTranslatedContent } from '../react/components/safe-string-handler';
+
 import './react-bridge.css';
 
 import { element, type ElementFromTagName } from 'ember-element-helper';
@@ -20,6 +22,35 @@ interface ReactBridgeArgs<T extends keyof HTMLElementTagNameMap, R> {
     default?: [];
   };
 }
+
+/**
+ * Transforms the properties of a given component by mapping each value
+ * through the `mapLegacyHTMLTranslatedContent` function. This is useful
+ * for converting legacy HTML content to a format compatible with modern
+ * React components.
+ *
+ * @template R - The type of the component's props.
+ * @param {PropsOf<R> | undefined} props - The original props of the component.
+ * @returns {PropsOf<R> | undefined} - A new props object with transformed values,
+ *                                      or undefined if no props were provided.
+ *
+ * Note: The function assumes that except for the safe string conversion,
+ * the types remain consistent with the original props.
+ */
+function transformPropsWithLegacyContent<R>(
+  props: PropsOf<R> | undefined,
+): PropsOf<R> | undefined {
+  if (!props) return undefined;
+  return {
+    ...Object.fromEntries(
+      Object.entries(props).map(([key, value]) => [
+        key,
+        mapLegacyHTMLTranslatedContent(value),
+      ]),
+    ),
+  } as PropsOf<R>;
+}
+
 export default class ReactBridge<
   T extends keyof HTMLElementTagNameMap, // we only want to allow valid HTML tag names
   R extends ComponentType<PropsOf<R>>,
@@ -33,7 +64,7 @@ export default class ReactBridge<
         {{! @glint-nocheck }}
         {{reactModifier
           reactComponent=@reactComponent
-          props=@props
+          props=(transformPropsWithLegacyContent @props)
           providerOptions=@providerOptions
           hasBlock=(has-block)
         }}
