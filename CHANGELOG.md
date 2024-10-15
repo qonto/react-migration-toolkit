@@ -1,5 +1,12 @@
 
 
+## [1.2.1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.0...v1.2.1) (2024-10-15)
+
+
+### Bug Fixes
+
+* **types:** use optional generic values in react bridge signature ([52c1fd5](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/52c1fd57a332c6229e981543c57cdd04ebc7b021))
+
 # [1.2.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.1.0...v1.2.0) (2024-10-14)
 
 
