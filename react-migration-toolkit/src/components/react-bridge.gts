@@ -52,8 +52,8 @@ function transformPropsWithLegacyContent<R>(
 }
 
 export default class ReactBridge<
-  T extends keyof HTMLElementTagNameMap, // we only want to allow valid HTML tag names
-  R extends ComponentType<PropsOf<R>>,
+  T extends keyof HTMLElementTagNameMap = 'div', // we only want to allow valid HTML tag names
+  R = ComponentType,
 > extends Component<ReactBridgeArgs<T, R>> {
   tagName = (this.args.tagName ?? 'div') as T;
   <template>
