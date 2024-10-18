@@ -1,6 +1,6 @@
 {
   "name": "@qonto/react-migration-toolkit",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A toolkit to help migrate Ember components to React",
   "keywords": [
     "ember-addon"
