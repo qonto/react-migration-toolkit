@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { Example as ReactExample } from '../react/example';
 import { htmlSafe } from '@ember/template';
 
-let safeText = htmlSafe(
+const safeText = htmlSafe(
   'Click on my  <a href="https://www.google.com">link</a>',
 );
 
