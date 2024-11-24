@@ -6,3 +6,9 @@ export default class ExampleRouting extends Component {
   reactExampleRouting = ReactExampleRouting;
   customProviders = CustomProviders;
 }
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    ExampleRouting: typeof ExampleRouting;
+  }
+}

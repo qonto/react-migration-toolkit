@@ -9,9 +9,10 @@ import { useTheme } from "./theme-context.tsx";
 interface ExampleProps {
   text?: string;
   children?: ReactNode;
+  [testAttr: `data-test-${string}`]: string;
 }
 
-export function Example({ text, children }: ExampleProps): ReactNode {
+export function Example({ text, children, ...props }: ExampleProps): ReactNode {
   const owner = useApplicationInstance();
   const { user } = (useEmberService("mockUserService") as any) ?? {};
   const theme = useTheme();
@@ -20,6 +21,7 @@ export function Example({ text, children }: ExampleProps): ReactNode {
     <div
       data-test-has-owner={owner instanceof ApplicationInstance}
       data-test-theme={theme?.current}
+      {...props}
     >
       <h1>Hi there 👋</h1>
       <p>

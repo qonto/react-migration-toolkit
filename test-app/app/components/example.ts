@@ -13,3 +13,9 @@ export default class Example extends Component {
     return safeText;
   }
 }
+
+declare module '@glint/environment-ember-loose/registry' {
+  export default interface Registry {
+    Example: typeof Example;
+  }
+}
