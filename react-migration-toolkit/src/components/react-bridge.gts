@@ -69,11 +69,7 @@ export default class ReactBridge<
           hasBlock=(has-block)
         }}
         ...attributes
-      >
-        {{~#if (has-block)~}}
-          {{yield}}
-        {{/if}}
-      </Tag>
+      />
     {{/let}}
   </template>
 }
