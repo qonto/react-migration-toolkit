@@ -8,6 +8,7 @@
 
 <ReactBridge
   @reactComponent={{this.reactExample}}
+  {{! @glint-expect-error: the SafeString transformation is not properly typed }}
   @props={{hash text=this.safeText data-test-example="true"}}
   class="class-from-bridge"
 />
