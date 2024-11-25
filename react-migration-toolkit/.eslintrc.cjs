@@ -64,6 +64,7 @@ module.exports = {
         './.prettierrc.cjs',
         './.template-lintrc.cjs',
         './addon-main.cjs',
+        './babel-plugin/*.cjs',
       ],
       parserOptions: {
         sourceType: 'script',
