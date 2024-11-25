@@ -1,5 +1,6 @@
 <ReactBridge
   @reactComponent={{this.reactExampleRouting}}
   @props={{hash data-test-example-routing="true"}}
+  {{! @glint-expect-error: Args typres are still WIP and providerOptions is not typed yet }}
   @providerOptions={{hash component=this.customProviders}}
 />
