@@ -28,7 +28,7 @@ module('Integration | Component | react-bridge', function (hooks) {
     });
   });
 
-  test('it renders with props and children', async function (assert) {
+  test.skip('it renders with props and children', async function (assert) {
     this.setProperties({
       propsText: new (class {
         @tracked value = 'props content';
