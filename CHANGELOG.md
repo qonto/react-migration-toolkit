@@ -1,5 +1,17 @@
 
 
+# [2.0.0-beta.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.2...v2.0.0-beta.0) (2024-11-27)
+
+
+### Bug Fixes
+
+* **types:** expose a registry type in template-registry ([cdca8f5](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/cdca8f587bd0ddbbafece970ae2e12f05f6ce2ea))
+
+
+### Features
+
+* handle all children/yield logic via babel ([cc00a6f](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/cc00a6f12b580f8fad8d783346dd991d10d69043))
+
 ## [1.2.2](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.1...v1.2.2) (2024-10-18)
 
 ## [1.2.1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.0...v1.2.1) (2024-10-15)
