@@ -1,5 +1,7 @@
 
 
+# [2.0.0-beta.1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v2.0.0-beta.0...v2.0.0-beta.1) (2024-11-27)
+
 # [2.0.0-beta.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.2...v2.0.0-beta.0) (2024-11-27)
 
 
