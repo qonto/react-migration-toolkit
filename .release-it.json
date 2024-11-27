@@ -12,7 +12,6 @@
   },
   "git": {
     "commitMessage": "chore: release v${version}",
-    "requireBranch": "main",
     "tagName": "v${version}"
   },
   "hooks": {
