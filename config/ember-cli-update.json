@@ -9,10 +9,7 @@
         {
           "name": "@embroider/addon-blueprint",
           "isBaseBlueprint": true,
-          "options": [
-            "--pnpm",
-            "--typescript"
-          ]
+          "options": ["--pnpm", "--typescript"]
         }
       ]
     }

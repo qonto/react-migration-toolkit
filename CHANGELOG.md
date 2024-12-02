@@ -1,45 +1,37 @@
-
-
 ## [1.2.3](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.2...v1.2.3) (2024-11-26)
-
 
 ### Bug Fixes
 
-* **types:** expose a registry type in template-registry ([cdca8f5](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/cdca8f587bd0ddbbafece970ae2e12f05f6ce2ea))
+- **types:** expose a registry type in template-registry ([cdca8f5](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/cdca8f587bd0ddbbafece970ae2e12f05f6ce2ea))
 
 ## [1.2.2](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.1...v1.2.2) (2024-10-18)
 
 ## [1.2.1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.0...v1.2.1) (2024-10-15)
 
-
 ### Bug Fixes
 
-* **types:** use optional generic values in react bridge signature ([52c1fd5](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/52c1fd57a332c6229e981543c57cdd04ebc7b021))
+- **types:** use optional generic values in react bridge signature ([52c1fd5](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/52c1fd57a332c6229e981543c57cdd04ebc7b021))
 
 # [1.2.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.1.0...v1.2.0) (2024-10-14)
 
-
 ### Bug Fixes
 
-* **types:** fix [@tag](https://gitlab.qonto.co/tag)Name types, infer attributes and fix yield block types ([05fe736](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/05fe736571b161942cf9627890105b74116ecd98))
-
+- **types:** fix [@tag](https://gitlab.qonto.co/tag)Name types, infer attributes and fix yield block types ([05fe736](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/05fe736571b161942cf9627890105b74116ecd98))
 
 ### Features
 
-* ** react bridge:** handle safe strings ([2c35ef1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/2c35ef137e5d7d1ae1b8e7cbda59eb03927b89ef))
-* **types:** infer prop types in reactbridge ([5fc42bf](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/5fc42bffebbcada36c6fecb4c9ab9bd589a923f9))
+- ** react bridge:** handle safe strings ([2c35ef1](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/2c35ef137e5d7d1ae1b8e7cbda59eb03927b89ef))
+- **types:** infer prop types in reactbridge ([5fc42bf](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/5fc42bffebbcada36c6fecb4c9ab9bd589a923f9))
 
 # [1.1.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.0.0...v1.1.0) (2024-10-02)
 
-
 ### Bug Fixes
 
-* patch glint issue with dynamic tag resolution ([bbc1b57](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/bbc1b57f76a26fc0c2f98f92ccf0b899864c8b64))
-
+- patch glint issue with dynamic tag resolution ([bbc1b57](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/bbc1b57f76a26fc0c2f98f92ccf0b899864c8b64))
 
 ### Features
 
-* use intl._eventEmitter instead of _ee to listen for locale changes ([fb8b38d](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/fb8b38d4ca0a286c1ac520483b686f360a5c826b))
+- use intl.\_eventEmitter instead of \_ee to listen for locale changes ([fb8b38d](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/commit/fb8b38d4ca0a286c1ac520483b686f360a5c826b))
 
 # [1.0.0](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v0.4.2...v1.0.0) (2024-09-24)
 
