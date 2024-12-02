@@ -27,7 +27,7 @@
     "@release-it/conventional-changelog": "8.0.1",
     "concurrently": "8.2.2",
     "lefthook": "1.6.8",
-    "prettier": "3.3.3",
+    "prettier": "3.4.1",
     "prettier-plugin-ember-template-tag": "2.0.4",
     "release-it": "17.2.0"
   },
