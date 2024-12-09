@@ -110,7 +110,7 @@
     "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-qunit": "8.1.2",
     "loader.js": "4.7.0",
-    "prettier": "3.4.1",
+    "prettier": "3.4.2",
     "qunit": "2.21.0",
     "qunit-dom": "2.0.0",
     "react-intl": "^6.6.8",
