@@ -39,5 +39,5 @@
       "@glint/template": "patches/@glint__template.patch"
     }
   },
-  "packageManager": "pnpm@9.15.0"
+  "packageManager": "pnpm@9.15.1"
 }
