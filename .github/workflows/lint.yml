@@ -1,0 +1,29 @@
+name: Lint
+
+env:
+  FORCE_COLOR: 1
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - "*"
+  pull_request:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: wyvox/action-setup-pnpm@v3
+        with:
+          pnpm-version: 8.5.1
+          node-version: 18.x
+          args: "--frozen-lockfile"
+      - name: Run Lint
+        run: pnpm lint
