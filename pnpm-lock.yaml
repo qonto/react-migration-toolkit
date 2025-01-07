@@ -409,8 +409,8 @@ importers:
         specifier: 8.2.2
         version: 8.2.2
       ember-auto-import:
-        specifier: 2.7.2
-        version: 2.7.2(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
+        specifier: 2.10.0
+        version: 2.10.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
       ember-cli:
         specifier: 5.8.0
         version: 5.8.0(handlebars@4.7.8)(lodash@4.17.21)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(underscore@1.13.6)
@@ -4364,6 +4364,10 @@ packages:
 
   electron-to-chromium@1.5.29:
     resolution: {integrity: sha512-PF8n2AlIhCKXQ+gTpiJi0VhcHDb69kYX4MtCiivctc2QD3XuNZ/XIOlbGzt7WAjjEev0TtaH6Cu3arZExm5DOw==}
+
+  ember-auto-import@2.10.0:
+    resolution: {integrity: sha512-bcBFDYVTFHyqyq8BNvsj6UO3pE6Uqou/cNmee0WaqBgZ+1nQqFz0UE26usrtnFAT+YaFZSkqF2H36QW84k0/cg==}
+    engines: {node: 12.* || 14.* || >= 16}
 
   ember-auto-import@2.7.2:
     resolution: {integrity: sha512-pkWIljmJClYL17YBk8FjO7NrZPQoY9v0b+FooJvaHf/xlDQIBYVP7OaDHbNuNbpj7+wAwSDAnnwxjCoLsmm4cw==}
@@ -10586,7 +10590,7 @@ snapshots:
       '@ember/string': 3.1.1
       '@embroider/macros': 1.15.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))
       '@warp-drive/core-types': 0.0.0-beta.4(@babel/core@7.24.6)(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))
-      ember-auto-import: 2.7.2(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
+      ember-auto-import: 2.10.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
       ember-cli-babel: 8.2.0(@babel/core@7.24.6)
       pnpm-sync-dependencies-meta-injected: 0.0.10
       webpack: 5.97.1
@@ -10841,7 +10845,7 @@ snapshots:
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       dom-element-descriptors: 0.5.0
-      ember-auto-import: 2.7.2(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
+      ember-auto-import: 2.10.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
       ember-cli-babel: 7.26.11
       ember-cli-htmlbars: 6.3.0
       ember-source: 5.8.0(@babel/core@7.24.6)(@glimmer/component@1.1.2(@babel/core@7.24.6))(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(rsvp@4.8.5)(webpack@5.97.1)
@@ -14804,6 +14808,49 @@ snapshots:
 
   electron-to-chromium@1.5.29: {}
 
+  ember-auto-import@2.10.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1):
+    dependencies:
+      '@babel/core': 7.24.6
+      '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.24.6)
+      '@babel/plugin-proposal-decorators': 7.24.0(@babel/core@7.24.6)
+      '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.24.6)
+      '@babel/plugin-transform-class-static-block': 7.24.6(@babel/core@7.24.6)
+      '@babel/preset-env': 7.24.6(@babel/core@7.24.6)
+      '@embroider/macros': 1.15.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))
+      '@embroider/shared-internals': 2.5.2
+      babel-loader: 8.3.0(@babel/core@7.24.6)(webpack@5.97.1)
+      babel-plugin-ember-modules-api-polyfill: 3.5.0
+      babel-plugin-ember-template-compilation: 2.2.1
+      babel-plugin-htmlbars-inline-precompile: 5.3.1
+      babel-plugin-syntax-dynamic-import: 6.18.0
+      broccoli-debug: 0.6.5
+      broccoli-funnel: 3.0.8
+      broccoli-merge-trees: 4.2.0
+      broccoli-plugin: 4.0.7
+      broccoli-source: 3.0.1
+      css-loader: 5.2.7(webpack@5.97.1)
+      debug: 4.3.7(supports-color@9.4.0)
+      fs-extra: 10.1.0
+      fs-tree-diff: 2.0.1
+      handlebars: 4.7.8
+      is-subdir: 1.2.0
+      js-string-escape: 1.0.1
+      lodash: 4.17.21
+      mini-css-extract-plugin: 2.8.1(webpack@5.97.1)
+      minimatch: 3.1.2
+      parse5: 6.0.1
+      pkg-entry-points: 1.1.0
+      resolve: 1.22.8
+      resolve-package-path: 4.0.3
+      semver: 7.6.3
+      style-loader: 2.0.0(webpack@5.97.1)
+      typescript-memoize: 1.1.1
+      walk-sync: 3.0.0
+    transitivePeerDependencies:
+      - '@glint/template'
+      - supports-color
+      - webpack
+
   ember-auto-import@2.7.2(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1):
     dependencies:
       '@babel/core': 7.24.6
@@ -15399,7 +15446,7 @@ snapshots:
       '@embroider/macros': 1.15.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))
       '@warp-drive/core-types': 0.0.0-beta.4(@babel/core@7.24.6)(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))
       broccoli-merge-trees: 4.2.0
-      ember-auto-import: 2.7.2(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
+      ember-auto-import: 2.10.0(@glint/template@1.4.0(patch_hash=ygxmz5m3qdq3xzop3qfpvutpia))(webpack@5.97.1)
       ember-cli-babel: 8.2.0(@babel/core@7.24.6)
       ember-inflector: 4.0.2
       pnpm-sync-dependencies-meta-injected: 0.0.10
