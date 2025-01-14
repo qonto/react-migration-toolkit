@@ -1,3 +1,5 @@
+# Changelog
+
 ## [1.2.3](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.2...v1.2.3) (2024-11-26)
 
 ### Bug Fixes
