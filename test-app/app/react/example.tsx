@@ -9,7 +9,6 @@ import { useTheme } from "./theme-context.tsx";
 interface ExampleProps {
   text?: string;
   children?: ReactNode;
-  [testAttr: `data-test-${string}`]: string;
 }
 
 export function Example({ text, children, ...props }: ExampleProps): ReactNode {
