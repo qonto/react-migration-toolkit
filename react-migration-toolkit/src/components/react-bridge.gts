@@ -7,8 +7,13 @@ import './react-bridge.css';
 import { element, type ElementFromTagName } from 'ember-element-helper';
 import type { ComponentType } from 'react';
 
+type ExtraProps = Partial<{
+  [dataTestAttrs: `data-test-${string}`]: string;
+  [ariaAttrs: `aria-${string}`]: string;
+}>;
+
 type PropsOf<T> = T extends ComponentType<infer P>
-  ? Omit<P, 'children'>
+  ? Omit<P, 'children'> & ExtraProps
   : never;
 
 interface ReactBridgeArgs<T extends keyof HTMLElementTagNameMap, R> {
