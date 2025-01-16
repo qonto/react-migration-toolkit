@@ -1,5 +1,26 @@
 # Changelog
 
+## Release (2025-01-16)
+
+@qonto/react-migration-toolkit 1.3.0 (minor)
+
+#### :rocket: Enhancement
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#17](https://github.com/qonto/react-migration-toolkit/pull/17) fix(types): allow data-test-* and aria-* props to be passed to the bridge ([@poulet42](https://github.com/poulet42))
+
+#### :house: Internal
+* Other
+  * [#21](https://github.com/qonto/react-migration-toolkit/pull/21) ci: force signing of commits when preparing release ([@SkoebaSteve](https://github.com/SkoebaSteve))
+  * [#18](https://github.com/qonto/react-migration-toolkit/pull/18) feat: run npx create-release-plan-setup@latest ([@SkoebaSteve](https://github.com/SkoebaSteve))
+  * [#4](https://github.com/qonto/react-migration-toolkit/pull/4) ci: use dependabot over renovatebot ([@SkoebaSteve](https://github.com/SkoebaSteve))
+  * [#2](https://github.com/qonto/react-migration-toolkit/pull/2) Configure GitHub actions ([@SkoebaSteve](https://github.com/SkoebaSteve))
+* `test-app`
+  * [#3](https://github.com/qonto/react-migration-toolkit/pull/3) ci: setup test github action ([@SkoebaSteve](https://github.com/SkoebaSteve))
+
+#### Committers: 2
+- Corentin ([@poulet42](https://github.com/poulet42))
+- Steef Janssen ([@SkoebaSteve](https://github.com/SkoebaSteve))
+
 ## [1.2.3](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/compare/v1.2.2...v1.2.3) (2024-11-26)
 
 ### Bug Fixes
