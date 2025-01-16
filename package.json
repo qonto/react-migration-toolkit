@@ -1,10 +1,6 @@
 {
   "version": "1.2.3",
   "private": true,
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:qonto/react-migration-toolkit.git"
-  },
   "license": "MIT",
   "author": "",
   "scripts": {
