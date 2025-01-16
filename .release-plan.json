@@ -1,17 +1,17 @@
 {
   "solution": {
     "@qonto/react-migration-toolkit": {
-      "impact": "minor",
-      "oldVersion": "1.2.3",
-      "newVersion": "1.3.0",
+      "impact": "patch",
+      "oldVersion": "1.3.0",
+      "newVersion": "1.3.1",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./react-migration-toolkit/package.json"
     }
   },
-  "description": "## Release (2025-01-16)\n\n@qonto/react-migration-toolkit 1.3.0 (minor)\n\n#### :rocket: Enhancement\n* `@qonto/react-migration-toolkit`, `test-app`\n  * [#17](https://github.com/qonto/react-migration-toolkit/pull/17) fix(types): allow data-test-* and aria-* props to be passed to the bridge ([@poulet42](https://github.com/poulet42))\n\n#### :house: Internal\n* Other\n  * [#21](https://github.com/qonto/react-migration-toolkit/pull/21) ci: force signing of commits when preparing release ([@SkoebaSteve](https://github.com/SkoebaSteve))\n  * [#18](https://github.com/qonto/react-migration-toolkit/pull/18) feat: run npx create-release-plan-setup@latest ([@SkoebaSteve](https://github.com/SkoebaSteve))\n  * [#4](https://github.com/qonto/react-migration-toolkit/pull/4) ci: use dependabot over renovatebot ([@SkoebaSteve](https://github.com/SkoebaSteve))\n  * [#2](https://github.com/qonto/react-migration-toolkit/pull/2) Configure GitHub actions ([@SkoebaSteve](https://github.com/SkoebaSteve))\n* `test-app`\n  * [#3](https://github.com/qonto/react-migration-toolkit/pull/3) ci: setup test github action ([@SkoebaSteve](https://github.com/SkoebaSteve))\n\n#### Committers: 2\n- Corentin ([@poulet42](https://github.com/poulet42))\n- Steef Janssen ([@SkoebaSteve](https://github.com/SkoebaSteve))\n"
+  "description": "## Release (2025-01-16)\n\n@qonto/react-migration-toolkit 1.3.1 (patch)\n\n#### :house: Internal\n* Other\n  * [#24](https://github.com/qonto/react-migration-toolkit/pull/24) fix: add back repo url to the root package ([@SkoebaSteve](https://github.com/SkoebaSteve))\n* `@qonto/react-migration-toolkit`\n  * [#22](https://github.com/qonto/react-migration-toolkit/pull/22) ci: add repository url to the package workspace ([@SkoebaSteve](https://github.com/SkoebaSteve))\n\n#### Committers: 1\n- Steef Janssen ([@SkoebaSteve](https://github.com/SkoebaSteve))\n"
 }
