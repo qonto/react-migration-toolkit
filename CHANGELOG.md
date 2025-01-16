@@ -2,6 +2,19 @@
 
 ## Release (2025-01-16)
 
+@qonto/react-migration-toolkit 1.3.1 (patch)
+
+#### :house: Internal
+* Other
+  * [#24](https://github.com/qonto/react-migration-toolkit/pull/24) fix: add back repo url to the root package ([@SkoebaSteve](https://github.com/SkoebaSteve))
+* `@qonto/react-migration-toolkit`
+  * [#22](https://github.com/qonto/react-migration-toolkit/pull/22) ci: add repository url to the package workspace ([@SkoebaSteve](https://github.com/SkoebaSteve))
+
+#### Committers: 1
+- Steef Janssen ([@SkoebaSteve](https://github.com/SkoebaSteve))
+
+## Release (2025-01-16)
+
 @qonto/react-migration-toolkit 1.3.0 (minor)
 
 #### :rocket: Enhancement
