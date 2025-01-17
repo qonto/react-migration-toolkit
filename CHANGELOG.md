@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-01-17)
+
+@qonto/react-migration-toolkit 1.3.2 (patch)
+
+#### :bug: Bug Fix
+* `@qonto/react-migration-toolkit`
+  * [#25](https://github.com/qonto/react-migration-toolkit/pull/25) restrict ember-intl range to <7.0.8 as they removed eventEmitter ([@poulet42](https://github.com/poulet42))
+
+#### Committers: 1
+- Corentin ([@poulet42](https://github.com/poulet42))
+
 ## Release (2025-01-16)
 
 @qonto/react-migration-toolkit 1.3.1 (patch)
