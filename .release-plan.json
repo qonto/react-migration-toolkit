@@ -2,16 +2,16 @@
   "solution": {
     "@qonto/react-migration-toolkit": {
       "impact": "patch",
-      "oldVersion": "1.3.0",
-      "newVersion": "1.3.1",
+      "oldVersion": "1.3.1",
+      "newVersion": "1.3.2",
       "constraints": [
         {
           "impact": "patch",
-          "reason": "Appears in changelog section :house: Internal"
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./react-migration-toolkit/package.json"
     }
   },
-  "description": "## Release (2025-01-16)\n\n@qonto/react-migration-toolkit 1.3.1 (patch)\n\n#### :house: Internal\n* Other\n  * [#24](https://github.com/qonto/react-migration-toolkit/pull/24) fix: add back repo url to the root package ([@SkoebaSteve](https://github.com/SkoebaSteve))\n* `@qonto/react-migration-toolkit`\n  * [#22](https://github.com/qonto/react-migration-toolkit/pull/22) ci: add repository url to the package workspace ([@SkoebaSteve](https://github.com/SkoebaSteve))\n\n#### Committers: 1\n- Steef Janssen ([@SkoebaSteve](https://github.com/SkoebaSteve))\n"
+  "description": "## Release (2025-01-17)\n\n@qonto/react-migration-toolkit 1.3.2 (patch)\n\n#### :bug: Bug Fix\n* `@qonto/react-migration-toolkit`\n  * [#25](https://github.com/qonto/react-migration-toolkit/pull/25) restrict ember-intl range to <7.0.8 as they removed eventEmitter ([@poulet42](https://github.com/poulet42))\n\n#### Committers: 1\n- Corentin ([@poulet42](https://github.com/poulet42))\n"
 }
