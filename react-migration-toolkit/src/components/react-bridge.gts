@@ -61,24 +61,27 @@ export default class ReactBridge<
   R = ComponentType,
 > extends Component<ReactBridgeArgs<T, R>> {
   tagName = (this.args.tagName ?? 'div') as T;
+  or = (a: unknown, b: unknown) => a ?? b;
   <template>
     {{#let (element this.tagName) as |Tag|}}
-      <Tag
-        class={{unless @tagName 'react-bridge-wrapper'}}
-        data-test-react-bridge-component
-        {{! @glint-nocheck }}
-        {{reactModifier
-          reactComponent=@reactComponent
-          props=(transformPropsWithLegacyContent @props)
-          providerOptions=@providerOptions
-          hasBlock=(has-block)
-        }}
-        ...attributes
-      >
-        {{~#if (has-block)~}}
-          {{yield}}
-        {{/if}}
-      </Tag>
+      {{#let (this.or @hasBlock (has-block)) as |normalizedHasBlock|}}
+        <Tag
+          class={{unless @tagName 'react-bridge-wrapper'}}
+          data-test-react-bridge-component
+          {{! @glint-nocheck }}
+          {{reactModifier
+            reactComponent=@reactComponent
+            props=(transformPropsWithLegacyContent @props)
+            providerOptions=@providerOptions
+            hasBlock=normalizedHasBlock
+          }}
+          ...attributes
+        >
+          {{~#if normalizedHasBlock~}}
+            {{yield}}
+          {{/if}}
+        </Tag>
+      {{/let}}
     {{/let}}
   </template>
 }
