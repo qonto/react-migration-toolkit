@@ -4,10 +4,10 @@
 
 A set of tools facilitating the migration of Ember components to React components:
 
-- [Ember to React bridge component](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/-/tree/main/react-migration-toolkit/src/components)
-- [React providers](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/-/blob/main/react-migration-toolkit/src/react/contexts/index.ts)
-- [React hooks](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/-/blob/main/react-migration-toolkit/src/react/hooks/index.ts)
-- [React components](https://gitlab.qonto.co/npm-packages/react-migration-toolkit/-/blob/main/react-migration-toolkit/src/react/components/index.ts)
+- [Ember to React bridge component](https://github.com/qonto/react-migration-toolkit/tree/main/react-migration-toolkit/src/components)
+- [React providers](https://github.com/qonto/react-migration-toolkit/tree/main/react-migration-toolkit/src/react/contexts/index.ts)
+- [React hooks](https://github.com/qonto/react-migration-toolkit/tree/main/react-migration-toolkit/src/react/hooks/index.ts)
+- [React components](https://github.com/qonto/react-migration-toolkit/tree/main/react-migration-toolkit/src/react/components/index.ts)
 
 ## Usage
 
