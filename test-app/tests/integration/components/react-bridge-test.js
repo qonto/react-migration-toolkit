@@ -103,6 +103,7 @@ module('Integration | Component | react-bridge', function (hooks) {
         <ReactBridge
           @reactComponent={{this.reactExample}}
           @props={{this.props}}
+          @hasBlock={{false}}
         > </ReactBridge>
       `);
 
@@ -121,6 +122,7 @@ module('Integration | Component | react-bridge', function (hooks) {
         <ReactBridge
           @reactComponent={{this.reactExample}}
           @props={{this.props}}
+          @hasBlock={{false}}
         > </ReactBridge>
       `);
 
