@@ -9,6 +9,12 @@ A set of tools facilitating the migration of Ember components to React component
 - [React hooks](https://github.com/qonto/react-migration-toolkit/tree/main/react-migration-toolkit/src/react/hooks/index.ts)
 - [React components](https://github.com/qonto/react-migration-toolkit/tree/main/react-migration-toolkit/src/react/components/index.ts)
 
+## Installation
+
+```
+ember install react-migration-toolkit
+```
+
 ## Usage
 
 The main component brought by this addon is the `ReactBridge` Ember component.
@@ -59,12 +65,6 @@ export default class MyComponent extends Component {
 - [📕 How to use Ember services](https://www.notion.so/qonto/How-to-use-Ember-services-in-React-components-d8879e169fec417fb0cdf77e7ecd29ba)
 - [📕 How to use feature flags with LaunchDarkly](https://www.notion.so/qonto/How-to-use-feature-flags-in-React-components-ece906bed7b44202a8d3416ccadd7469)
 - [📕 How to test React components in Ember](https://www.notion.so/qonto/How-to-test-React-components-in-Ember-3686964be92642cc93f6dd767486cc59)
-
-## Installation
-
-```
-ember install react-migration-toolkit
-```
 
 ## Compatibility
 
