@@ -27,8 +27,13 @@ export function Link({ href, children, ...props }: LinkProps): ReactNode {
     return '';
   }, [href, router]);
 
+  const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    router.transitionTo(url);
+  };
+
   return (
-    <a href={url} {...props}>
+    <a href={url} onClick={onClick} {...props}>
       {children}
     </a>
   );
