@@ -10,6 +10,10 @@ export function ExampleRouting() {
         Visit About page
       </Link>
 
+      <Link data-test-about-link-replace href="/about" replace>
+        Visit About page
+      </Link>
+
       <button
         data-test-about-button-push
         onClick={() => {

@@ -14,6 +14,13 @@ module('Acceptance | links', function (hooks) {
     assert.dom().hasText('Welcome to the About page');
   });
 
+  test('should navigate to the about page with replace', async function (assert) {
+    await visit('/links');
+    await click('[data-test-about-link-replace]');
+
+    assert.dom().hasText('Welcome to the About page');
+  });
+
   module('when navigating with Polymorphic router', function (hooks) {
     hooks.beforeEach(async function () {
       await visit('/links');
