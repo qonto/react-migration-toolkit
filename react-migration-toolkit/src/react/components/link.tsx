@@ -6,9 +6,15 @@ import { setUrlFromRelativePath, urlFromRouteInfo } from '../utils/router.ts';
 
 interface LinkProps extends Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
   href: string | UrlObject;
+  replace?: boolean;
 }
 
-export function Link({ href, children, ...props }: LinkProps): ReactNode {
+export function Link({
+  href,
+  children,
+  replace,
+  ...props
+}: LinkProps): ReactNode {
   const router = useEmberService('router');
 
   const url = useMemo(() => {
@@ -29,7 +35,11 @@ export function Link({ href, children, ...props }: LinkProps): ReactNode {
 
   const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
-    router.transitionTo(url);
+    if (replace) {
+      router.replaceWith(url);
+    } else {
+      router.transitionTo(url);
+    }
   };
 
   return (
