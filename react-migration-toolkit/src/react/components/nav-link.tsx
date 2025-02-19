@@ -1,9 +1,41 @@
 import type { ReactNode } from 'react';
+import { useEmberService } from '../hooks/use-ember-service.ts';
 import { Link, type LinkProps } from './link';
 
-export function NavLink({ to, children, ...props }: LinkProps): ReactNode {
+export type NavLinkRenderProps = {
+  isActive: boolean;
+};
+
+export interface NavLinkProps extends Omit<LinkProps, 'className'> {
+  className?: string | ((props: NavLinkRenderProps) => string | undefined);
+}
+
+export function NavLink({
+  children,
+  className: classNameProp,
+  to,
+  ...props
+}: NavLinkProps): ReactNode {
+  let className: string | undefined;
+  const router = useEmberService('router');
+  const locationPathname = router.currentURL;
+
+  const isActive = locationPathname === to;
+
+  const renderProps = {
+    isActive,
+  };
+
+  if (typeof classNameProp === 'function') {
+    className = classNameProp(renderProps);
+  } else {
+    className = [classNameProp, isActive ? 'active' : null]
+      .filter(Boolean)
+      .join(' ');
+  }
+
   return (
-    <Link to={to} {...props}>
+    <Link className={className} to={to} {...props}>
       {children}
     </Link>
   );
