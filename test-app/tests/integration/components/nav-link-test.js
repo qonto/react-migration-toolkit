@@ -30,6 +30,7 @@ module('Integration | Component | NavLink', function (hooks) {
 
     assert.dom('[data-test-nav-link]').exists();
     assert.dom('[data-test-nav-link]').doesNotHaveClass('active');
+    assert.dom('[data-test-nav-link]').hasNoAttribute('aria-current');
   });
 
   module('when route is active', function (hooks) {
@@ -44,7 +45,7 @@ module('Integration | Component | NavLink', function (hooks) {
       );
     });
 
-    test('should have active class', async function (assert) {
+    test('should have active properties', async function (assert) {
       await render(hbs`
         <ReactBridge
           @reactComponent={{this.navLink}}
@@ -54,6 +55,7 @@ module('Integration | Component | NavLink', function (hooks) {
       `);
 
       assert.dom('[data-test-nav-link]').hasClass('active');
+      assert.dom('[data-test-nav-link]').hasAttribute('aria-current', 'page');
     });
 
     test('should concatenate active class', async function (assert) {
@@ -82,6 +84,18 @@ module('Integration | Component | NavLink', function (hooks) {
       `);
 
       assert.dom('[data-test-nav-link]').hasClass('custom-active');
+    });
+
+    test('should have custom aria-current', async function (assert) {
+      await render(hbs`
+        <ReactBridge
+          @reactComponent={{this.navLink}}
+          @props={{hash aria-current="custom" to="/active" data-test-nav-link=""}}
+          @providerOptions={{this.reactProviderOptions}}
+        />
+      `);
+
+      assert.dom('[data-test-nav-link]').hasAttribute('aria-current', 'custom');
     });
   });
 });

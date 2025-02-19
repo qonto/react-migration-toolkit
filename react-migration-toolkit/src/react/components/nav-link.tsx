@@ -11,6 +11,7 @@ export interface NavLinkProps extends Omit<LinkProps, 'className'> {
 }
 
 export function NavLink({
+  'aria-current': ariaCurrentProp = 'page',
   children,
   className: classNameProp,
   to,
@@ -21,6 +22,7 @@ export function NavLink({
   const locationPathname = router.currentURL;
 
   const isActive = locationPathname === to;
+  const ariaCurrent = isActive ? ariaCurrentProp : undefined;
 
   const renderProps = {
     isActive,
@@ -35,7 +37,7 @@ export function NavLink({
   }
 
   return (
-    <Link className={className} to={to} {...props}>
+    <Link aria-current={ariaCurrent} className={className} to={to} {...props}>
       {children}
     </Link>
   );
