@@ -5,20 +5,20 @@ import { parseUrl } from '../utils/url.ts';
 import { setUrlFromRelativePath, urlFromRouteInfo } from '../utils/router.ts';
 
 interface LinkProps extends Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
-  href: string | UrlObject;
   replace?: boolean;
+  to: string | UrlObject;
 }
 
 export function Link({
-  href,
   children,
   replace,
+  to,
   ...props
 }: LinkProps): ReactNode {
   const router = useEmberService('router');
 
   const url = useMemo(() => {
-    const parsedUrl = parseUrl(href);
+    const parsedUrl = parseUrl(to);
     let routeInfo;
 
     if (parsedUrl.startsWith('/')) {
@@ -31,7 +31,7 @@ export function Link({
       return urlFromRouteInfo(router, routeInfo);
     }
     return '';
-  }, [href, router]);
+  }, [to, router]);
 
   const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();

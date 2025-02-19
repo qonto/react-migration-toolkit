@@ -6,11 +6,11 @@ export function ExampleRouting() {
 
   return (
     <div>
-      <Link data-test-about-link href="/about">
+      <Link data-test-about-link to="/about">
         Visit About page
       </Link>
 
-      <Link data-test-about-link-replace href="/about" replace>
+      <Link data-test-about-link-replace to="/about" replace>
         Visit About page
       </Link>
 
