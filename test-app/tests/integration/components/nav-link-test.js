@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { hbs } from 'ember-cli-htmlbars';
-import { render } from '@ember/test-helpers';
+import { find, render } from '@ember/test-helpers';
 import { setupIntl } from 'ember-intl/test-support';
 
 import { setupRenderingTest } from 'test-app/tests/helpers';
@@ -96,6 +96,24 @@ module('Integration | Component | NavLink', function (hooks) {
       `);
 
       assert.dom('[data-test-nav-link]').hasAttribute('aria-current', 'custom');
+    });
+
+    test('should set custom style', async function (assert) {
+      this.style = ({ isActive }) => ({
+        color: isActive ? 'red' : 'black',
+      });
+      await render(hbs`
+        <ReactBridge
+          @reactComponent={{this.navLink}}
+          @props={{hash
+          style=this.style
+          to="/active" data-test-nav-link=""}}
+          @providerOptions={{this.reactProviderOptions}}
+        />
+      `);
+
+      let elementStyle = find('[data-test-nav-link]').style;
+      assert.strictEqual(elementStyle.color, 'red');
     });
   });
 });

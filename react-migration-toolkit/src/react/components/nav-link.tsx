@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { useEmberService } from '../hooks/use-ember-service.ts';
 import { Link, type LinkProps } from './link';
 
@@ -7,9 +7,12 @@ export type NavLinkRenderProps = {
 };
 
 export interface NavLinkProps
-  extends Omit<LinkProps, 'className' | 'children'> {
+  extends Omit<LinkProps, 'className' | 'children' | 'style'> {
   children?: ReactNode | ((props: NavLinkRenderProps) => ReactNode);
   className?: string | ((props: NavLinkRenderProps) => string | undefined);
+  style?:
+    | CSSProperties
+    | ((props: NavLinkRenderProps) => CSSProperties | undefined);
 }
 
 export function NavLink({
@@ -17,6 +20,7 @@ export function NavLink({
   children,
   className: classNameProp,
   to,
+  style: styleProp,
   ...props
 }: NavLinkProps): ReactNode {
   let className: string | undefined;
@@ -38,8 +42,17 @@ export function NavLink({
       .join(' ');
   }
 
+  const style =
+    typeof styleProp === 'function' ? styleProp(renderProps) : styleProp;
+
   return (
-    <Link aria-current={ariaCurrent} className={className} to={to} {...props}>
+    <Link
+      aria-current={ariaCurrent}
+      className={className}
+      style={style}
+      to={to}
+      {...props}
+    >
       {typeof children === 'function' ? children(renderProps) : children}
     </Link>
   );
