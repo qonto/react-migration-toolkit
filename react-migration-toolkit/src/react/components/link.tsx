@@ -4,7 +4,7 @@ import type { UrlObject } from '../types/router.ts';
 import { parseUrl } from '../utils/url.ts';
 import { setUrlFromRelativePath, urlFromRouteInfo } from '../utils/router.ts';
 
-interface LinkProps extends Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
+export interface LinkProps extends Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
   replace?: boolean;
   to: string | UrlObject;
 }
