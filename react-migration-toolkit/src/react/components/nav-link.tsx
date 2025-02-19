@@ -6,7 +6,9 @@ export type NavLinkRenderProps = {
   isActive: boolean;
 };
 
-export interface NavLinkProps extends Omit<LinkProps, 'className'> {
+export interface NavLinkProps
+  extends Omit<LinkProps, 'className' | 'children'> {
+  children?: ReactNode | ((props: NavLinkRenderProps) => ReactNode);
   className?: string | ((props: NavLinkRenderProps) => string | undefined);
 }
 
@@ -38,7 +40,7 @@ export function NavLink({
 
   return (
     <Link aria-current={ariaCurrent} className={className} to={to} {...props}>
-      {children}
+      {typeof children === 'function' ? children(renderProps) : children}
     </Link>
   );
 }
