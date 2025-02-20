@@ -1,5 +1,26 @@
 # Changelog
 
+## Release (2025-02-20)
+
+@qonto/react-migration-toolkit 2.0.0 (major)
+
+#### :boom: Breaking Change
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#44](https://github.com/qonto/react-migration-toolkit/pull/44) refactor(Link): rename href by to ([@AntoineMoues](https://github.com/AntoineMoues))
+
+#### :rocket: Enhancement
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#45](https://github.com/qonto/react-migration-toolkit/pull/45) feat(NavLink): create component ([@AntoineMoues](https://github.com/AntoineMoues))
+  * [#42](https://github.com/qonto/react-migration-toolkit/pull/42) feat(Link): create onClick handler to transition ([@AntoineMoues](https://github.com/AntoineMoues))
+
+#### :bug: Bug Fix
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#31](https://github.com/qonto/react-migration-toolkit/pull/31) Fix hierarchy request error with empty yield ([@jembezmamy](https://github.com/jembezmamy))
+
+#### Committers: 2
+- Antoine Mouës ([@AntoineMoues](https://github.com/AntoineMoues))
+- Paweł Bator ([@jembezmamy](https://github.com/jembezmamy))
+
 ## Release (2025-01-17)
 
 @qonto/react-migration-toolkit 1.3.2 (patch)
