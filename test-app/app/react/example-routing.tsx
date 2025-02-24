@@ -1,8 +1,8 @@
 import { Link } from "@qonto/react-migration-toolkit/react/components";
-import { useRouter } from "@qonto/react-migration-toolkit/react/hooks";
+import { useNavigate } from "@qonto/react-migration-toolkit/react/hooks";
 
 export function ExampleRouting() {
-  const router = useRouter();
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -17,7 +17,7 @@ export function ExampleRouting() {
       <button
         data-test-about-button-push
         onClick={() => {
-          router.push("/about");
+          navigate("/about");
         }}
       >
         Push to About page
@@ -26,7 +26,7 @@ export function ExampleRouting() {
       <button
         data-test-about-button-push-query
         onClick={() => {
-          router.push("/about?foo=bar&baz=qux");
+          navigate("/about?foo=bar&baz=qux");
         }}
       >
         Push to About page with query params
@@ -35,7 +35,7 @@ export function ExampleRouting() {
       <button
         data-test-about-button-replace
         onClick={() => {
-          router.replace("/about");
+          navigate("/about", { replace: true });
         }}
       >
         Replace to About page
@@ -44,7 +44,7 @@ export function ExampleRouting() {
       <button
         data-test-about-button-replace-query
         onClick={() => {
-          router.replace("/about?foo=bar&baz=qux");
+          navigate("/about?foo=bar&baz=qux", { replace: true });
         }}
       >
         Replace to About page with query params
