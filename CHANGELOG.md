@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-02-24)
+
+@qonto/react-migration-toolkit 2.1.0 (minor)
+
+#### :rocket: Enhancement
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#46](https://github.com/qonto/react-migration-toolkit/pull/46) feat(useNavigate): add hook and its provider ([@AntoineMoues](https://github.com/AntoineMoues))
+
+#### Committers: 1
+- Antoine Mouës ([@AntoineMoues](https://github.com/AntoineMoues))
+
 ## Release (2025-02-20)
 
 @qonto/react-migration-toolkit 2.0.0 (major)
