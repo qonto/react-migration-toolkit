@@ -1,6 +1,6 @@
 import { createContext, type ReactNode, type PropsWithChildren } from 'react';
 
-type FlagValue = boolean | string;
+export type FlagValue = boolean | string;
 export type LDFlagSet = Record<string, FlagValue>;
 
 export const LDContext = createContext<LDFlagSet | null>(null);
