@@ -1,30 +1,14 @@
 import { useContext } from 'react';
-import { type LDFlagSet, LDContext } from '../contexts/launchdarkly-context';
+import {
+  camelizeObjectKeys,
+  type CamelizedKeys,
+} from '../utils/camelize-object-keys';
+import { type FlagValue, LDContext } from '../contexts/launchdarkly-context';
 
-export const useFlags = (): LDFlagSet => {
+export const useFlags = (): CamelizedKeys<Record<string, FlagValue>> => {
   const allFlags = useContext(LDContext);
   if (!allFlags) {
     throw new Error('useFlags must be used within a LDProvider');
   }
-  return camelizeFlags(allFlags);
-};
-
-const camelize = (text: string): string => {
-  return text.replace(
-    /-+(?<letter>[a-z])/g,
-    (match: string, letter: string) => {
-      return letter.toUpperCase();
-    },
-  );
-};
-
-const camelizeFlags = (flags: LDFlagSet): LDFlagSet => {
-  return Object.entries(flags).reduce<LDFlagSet>(
-    (camelizedFlags, [key, value]) => {
-      const camelizedKey = camelize(key);
-      camelizedFlags[camelizedKey] = value;
-      return camelizedFlags;
-    },
-    {},
-  );
+  return camelizeObjectKeys(allFlags);
 };
