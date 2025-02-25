@@ -1,17 +1,17 @@
 {
   "solution": {
     "@qonto/react-migration-toolkit": {
-      "impact": "minor",
-      "oldVersion": "2.0.0",
-      "newVersion": "2.1.0",
+      "impact": "patch",
+      "oldVersion": "2.1.0",
+      "newVersion": "2.1.1",
       "constraints": [
         {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./react-migration-toolkit/package.json"
     }
   },
-  "description": "## Release (2025-02-24)\n\n@qonto/react-migration-toolkit 2.1.0 (minor)\n\n#### :rocket: Enhancement\n* `@qonto/react-migration-toolkit`, `test-app`\n  * [#46](https://github.com/qonto/react-migration-toolkit/pull/46) feat(useNavigate): add hook and its provider ([@AntoineMoues](https://github.com/AntoineMoues))\n\n#### Committers: 1\n- Antoine Mouës ([@AntoineMoues](https://github.com/AntoineMoues))\n"
+  "description": "## Release (2025-02-25)\n\n@qonto/react-migration-toolkit 2.1.1 (patch)\n\n#### :bug: Bug Fix\n* `@qonto/react-migration-toolkit`, `test-app`\n  * [#50](https://github.com/qonto/react-migration-toolkit/pull/50) fix(Link): should also trigger onClick from props ([@AntoineMoues](https://github.com/AntoineMoues))\n\n#### Committers: 1\n- Antoine Mouës ([@AntoineMoues](https://github.com/AntoineMoues))\n"
 }

@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-02-25)
+
+@qonto/react-migration-toolkit 2.1.1 (patch)
+
+#### :bug: Bug Fix
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#50](https://github.com/qonto/react-migration-toolkit/pull/50) fix(Link): should also trigger onClick from props ([@AntoineMoues](https://github.com/AntoineMoues))
+
+#### Committers: 1
+- Antoine Mouës ([@AntoineMoues](https://github.com/AntoineMoues))
+
 ## Release (2025-02-24)
 
 @qonto/react-migration-toolkit 2.1.0 (minor)
