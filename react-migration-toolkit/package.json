@@ -73,7 +73,7 @@
     "@babel/preset-react": "7.24.6",
     "@babel/preset-typescript": "7.24.6",
     "@babel/runtime": "7.24.6",
-    "@embroider/addon-dev": "4.2.1",
+    "@embroider/addon-dev": "7.1.1",
     "@embroider/macros": "1.15.0",
     "@glimmer/component": "1.1.2",
     "@glint/core": "1.4.0",
