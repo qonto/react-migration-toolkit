@@ -11,6 +11,7 @@ export interface LinkProps extends Omit<ComponentPropsWithoutRef<'a'>, 'href'> {
 
 export function Link({
   children,
+  onClick,
   replace,
   to,
   ...props
@@ -33,7 +34,8 @@ export function Link({
     return '';
   }, [to, router]);
 
-  const onClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+  const onClickHandler = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onClick) onClick(event);
     event.preventDefault();
     if (replace) {
       router.replaceWith(url);
@@ -43,7 +45,7 @@ export function Link({
   };
 
   return (
-    <a href={url} onClick={onClick} {...props}>
+    <a href={url} onClick={onClickHandler} {...props}>
       {children}
     </a>
   );
