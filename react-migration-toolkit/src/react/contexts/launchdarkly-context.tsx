@@ -3,12 +3,21 @@ import { createContext, type ReactNode, type PropsWithChildren } from 'react';
 export type FlagValue = boolean | string;
 export type LDFlagSet = Record<string, FlagValue>;
 
-export const LDContext = createContext<LDFlagSet | null>(null);
+import { camelizeObjectKeys } from '../utils/camelize-object-keys';
 
-interface LDProviderProps extends PropsWithChildren {
-  ldFlags: LDFlagSet;
+interface LDProviderProps<Flags> extends PropsWithChildren {
+  ldFlags: Flags;
 }
 
-export function LDProvider({ children, ldFlags }: LDProviderProps): ReactNode {
-  return <LDContext.Provider value={ldFlags}>{children}</LDContext.Provider>;
+export const LDContext = createContext<LDFlagSet>({});
+
+export function LDProvider<Flags extends Record<string, FlagValue>>({
+  children,
+  ldFlags,
+}: LDProviderProps<Flags>): ReactNode {
+  return (
+    <LDContext.Provider value={camelizeObjectKeys(ldFlags)}>
+      {children}
+    </LDContext.Provider>
+  );
 }
