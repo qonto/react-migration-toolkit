@@ -54,7 +54,7 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
 
   modify(
     element: Element,
-    positional: null,
+    _: null,
     { reactComponent, props, providerOptions, hasBlock }: ReactModifierOptions,
   ) {
     if (!this.root) {
