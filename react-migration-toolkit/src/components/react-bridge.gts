@@ -12,9 +12,7 @@ type ExtraProps = Partial<{
   [ariaAttrs: `aria-${string}`]: string;
 }>;
 
-type PropsOf<T> = T extends ComponentType<infer P>
-  ? Omit<P, 'children'> & ExtraProps
-  : never;
+type PropsOf<T> = T extends ComponentType<infer P> ? P & ExtraProps : never;
 
 interface ReactBridgeArgs<T extends keyof HTMLElementTagNameMap, R> {
   Element: ElementFromTagName<T>;

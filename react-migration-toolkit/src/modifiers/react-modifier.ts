@@ -3,9 +3,14 @@ import { getOwner } from '@ember/application';
 
 import { isTesting, macroCondition } from '@embroider/macros';
 import Modifier from 'ember-modifier';
-import { createElement, type ReactElement, type ComponentType } from 'react';
+import {
+  act,
+  type ComponentType,
+  createElement,
+  type PropsWithChildren,
+  type ReactNode,
+} from 'react';
 import { createRoot, type Root } from 'react-dom/client';
-import { act } from 'react';
 import type ApplicationInstance from '@ember/application/instance';
 import { App } from '../react/app/app';
 import type { CustomProviderOptions } from '../../types';
@@ -27,7 +32,7 @@ function cleanup(instance: ReactModifier) {
 
 type ReactModifierOptions = {
   reactComponent: ComponentType;
-  props: object;
+  props: PropsWithChildren;
   providerOptions: CustomProviderOptions | undefined;
   hasBlock: boolean;
 };
@@ -48,14 +53,19 @@ declare global {
 
 export default class ReactModifier extends Modifier<ReactModifierSignature> {
   root: Root | null = null;
-  children: ReactElement[] | null = null;
+  children: ReactNode;
   isInitialRender = true;
   owner = getOwner(this) as ApplicationInstance;
 
   modify(
     element: Element,
     _: null,
-    { reactComponent, props, providerOptions, hasBlock }: ReactModifierOptions,
+    {
+      reactComponent,
+      props = {},
+      providerOptions,
+      hasBlock,
+    }: ReactModifierOptions,
   ) {
     if (!this.root) {
       this.root = createRoot(element);
@@ -71,20 +81,27 @@ export default class ReactModifier extends Modifier<ReactModifierSignature> {
       },
     );
     if (this.isInitialRender && filteredChildNodes.length > 0 && hasBlock) {
-      const children = [
+      this.children = [
         createElement<YieldWrapperProps>(YieldWrapper, {
           key: crypto.randomUUID(),
           nodes: Array.from(filteredChildNodes),
         }),
       ];
-      this.children = children;
       this.isInitialRender = false;
     }
+
+    const { children, ...restOfProps } = props;
+    const childrenFromProps =
+      typeof children === 'function' ? createElement(children) : children;
 
     const wrappedComponent = createElement(
       App,
       { owner: this.owner, providerOptions },
-      createElement(reactComponent, props, this.children),
+      createElement(
+        reactComponent,
+        restOfProps,
+        childrenFromProps || this.children,
+      ),
     );
 
     if (macroCondition(isTesting())) {

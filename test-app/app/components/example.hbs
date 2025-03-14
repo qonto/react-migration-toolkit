@@ -12,3 +12,13 @@
   @props={{hash text=this.safeText data-test-example="true"}}
   class="class-from-bridge"
 />
+
+<ReactBridge
+  @reactComponent={{this.reactExample}}
+  @props={{hash children=this.reactExample}}
+/>
+
+<ReactBridge
+  @reactComponent={{this.reactExample}}
+  @props={{hash children="Children as Props"}}
+/>

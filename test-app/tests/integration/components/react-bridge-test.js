@@ -272,4 +272,41 @@ module('Integration | Component | react-bridge', function (hooks) {
       .hasAttribute('href', 'https://www.google.com')
       .hasText('world');
   });
+
+  module('when children prop is passed directly', function () {
+    test('it correctly renders strings', async function (assert) {
+      let text = `Test text as children`;
+
+      this.setProperties({
+        reactExample: Example,
+        props: {
+          children: text,
+        },
+      });
+
+      await render(hbs`
+        <ReactBridge
+          @reactComponent={{this.reactExample}}
+          @props={{hash children=this.props.children}}
+        />
+    `);
+
+      assert.dom('[data-test-children-content]').hasText(text);
+    });
+
+    test('it correctly renders ReactNode', async function (assert) {
+      this.setProperties({
+        reactExample: Example,
+      });
+
+      await render(hbs`
+        <ReactBridge
+          @reactComponent={{this.reactExample}}
+          @props={{hash children=this.reactExample}}
+        />
+    `);
+
+      assert.dom('h1').exists({ count: 2 });
+    });
+  });
 });

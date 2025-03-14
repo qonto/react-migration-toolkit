@@ -20,6 +20,7 @@ export function Example({ text, children, ...props }: ExampleProps): ReactNode {
     <div
       data-test-has-owner={owner instanceof ApplicationInstance}
       data-test-theme={theme?.current}
+      style={{ border: "1px solid gray", padding: 16, margin: 16 }}
       {...props}
     >
       <h1>Hi there 👋</h1>
@@ -45,7 +46,7 @@ export function Example({ text, children, ...props }: ExampleProps): ReactNode {
         <div data-test-children>
           <hr />
           <h3>Children values:</h3>
-          {children}
+          <div data-test-children-content>{children}</div>
         </div>
       )}
     </div>
