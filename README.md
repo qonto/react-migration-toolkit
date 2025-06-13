@@ -21,10 +21,6 @@ The main component brought by this addon is the `ReactBridge` Ember component.
 
 It renders React components within Ember templates, permitting progressive UI migration and preserving existing logics and tests.
 
-Full documentation can be found [here](https://www.notion.so/qonto/How-to-use-React-components-in-Ember-applications-e2f8513fc4a442b0967274d9e57b18b0) (Qonto VPN must be on).
-
-[This branch](https://gitlab.qonto.co/front/qonto-js/-/blob/bifrost/app/components/react-bifrost.hbs) uses the ReactBridge extensively and can be checked for reference.
-
 ## Basic Example
 
 #### To inject a React component in Ember:
