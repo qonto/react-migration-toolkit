@@ -255,6 +255,7 @@ The react-bridge has proper Glint types, which allow you when using TypeScript t
 
 Unless you are using strict mode templates (via first class component templates), you need to import the addon's Glint template registry and extend your app's registry declaration as described in the Using Addons documentation:
 
+```javascript
 import '@glint/environment-ember-loose';
 
 import type ReactMigrationToolkitRegistry from '@qonto/react-migration-toolkit/template-registry';
@@ -263,7 +264,7 @@ declare module '@glint/environment-ember-loose/registry' {
   export default interface Registry 
     extends ReactMigrationToolkitRegistry {}
 }
-
+```
 
 ## Compatibility
 
