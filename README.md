@@ -15,6 +15,29 @@ A set of tools facilitating the migration of Ember components to React component
 ember install react-migration-toolkit
 ```
 
+## Configuration
+
+⚠️ When using Webpack, your Ember apps need to compile jsx:
+
+```javascript
+// webpack.config.js
+rules: [
+  // ...
+  {
+    test: /\.jsx/, // replace or add tsx if you use typescript
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          // Add other presets here if you need Typescript support for example
+          ['@babel/preset-react', { runtime: 'automatic' }],
+        ],
+      },
+    },
+  },
+];
+```
+
 ## Usage
 
 The main component brought by this addon is the `ReactBridge` Ember component.
