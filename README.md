@@ -62,8 +62,7 @@ The React Bridge accepts yielded values, which can be accessed via the `children
 ```html
 <ReactBridge
   @reactComponent="{{this.reactExample}}"
-  @props="{{hash"
-  text="this.props.text}}"
+  @props={{hash text="this.props.text"}}
 >
   <p>Hello World!</p>
 </ReactBridge>
@@ -87,8 +86,7 @@ function ReactExample({ children, text }: ReactExampleProps) {
 ```html
 <ReactBridge
   @reactComponent="{{this.reactExample}}"
-  @props="{{hash"
-  text="this.props.text}}"
+  @props={{hash text="this.props.text"}}
 >
   {{format/iban @iban}}
 </ReactBridge>
@@ -102,8 +100,7 @@ Failed to execute 'removeChild' on 'Node'
 ```html
 <ReactBridge
   @reactComponent="{{this.reactExample}}"
-  @props="{{hash"
-  text="this.props.text}}"
+  @props={{hash text="this.props.text"}}
 >
   {{#if this.someCondition}}
     {{t "some-text"}} 
@@ -117,9 +114,8 @@ Failed to execute 'removeChild' on 'Node'
 
 ```html
 <ReactBridge
-  @reactComponent="{{this.reactExample}}"
-  @props="{{hash"
-  text="this.props.text}}"
+  @reactComponent={{this.reactExample}}
+  @props={{hash text="this.props.text"}}
 >
   <div>
     {{#if this.someCondition}}
@@ -135,9 +131,8 @@ Failed to execute 'removeChild' on 'Node'
 
 ```html
 <ReactBridge
-  @reactComponent="{{this.reactExample}}"
-  @props="{{hash"
-  text="this.props.text}}"
+  @reactComponent={{this.reactExample}}
+  @props={{hash text="this.props.text"}}
 >
   <SomeEmberComponent />
 </ReactBridge>
@@ -147,12 +142,11 @@ Failed to execute 'removeChild' on 'Node'
 
 ```html
 <ReactBridge
-  @reactComponent="{{this.reactExample}}"
-  @props="{{hash"
-  text="this.props.text}}"
+  @reactComponent={{this.reactExample}}
+  @props={{hash text="this.props.text"}}
 >
   <ReactBridge
-    @reactComponent="{{this.someReactComponent}}"
+    @reactComponent={{this.someReactComponent}}
   />
 </ReactBridge>
 ```
@@ -161,9 +155,8 @@ Failed to execute 'removeChild' on 'Node'
 
 ```html
 <ReactBridge
-  @reactComponent="{{this.reactExampleWithEmberComponent}}"
-  @props="{{hash"
-  text="this.props.text}}"
+  @reactComponent={{this.reactExampleWithEmberComponent}}
+  @props={{hash text="this.props.text"}}
 />
 ```
 
