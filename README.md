@@ -222,18 +222,18 @@ module('my component test', function () {
 });
 ```
 
-If you need custom providers, they require the same setup as your Ember components:
+If you're using custom providers, they require the same setup as your Ember components:
 
 ```javascript
 import { WelcomeMessage } from 'qonto/react/component/welcome-message';
 import { setupIntl } from 'ember-intl';
+import { intlProvider } from 'qonto/react/providers/intl';
 
 module('my component test', function (hooks) {
   setupIntl(hooks);
   test('It renders properly', async function (assert) {
     this.setProperties({ userName: 'Jane Doe' });
     this.reactWelcomeMessage = WelcomeMessage;
-    this.setupIntl();
 
     await render(
       hbs`<ReactBridge
@@ -241,6 +241,7 @@ module('my component test', function (hooks) {
         @props={{hash
           cardLevel=this.userName
         }}
+        customProviders={{this.intlProvider}}
       />`,
     );
 
