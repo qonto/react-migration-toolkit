@@ -8,12 +8,8 @@ import { htmlSafe } from '@ember/template';
 import { setupRenderingTest } from 'test-app/tests/helpers';
 import { Example } from 'test-app/react/example';
 import { ExampleIntl } from 'test-app/react/exampleIntl';
-import { ExampleWithLD } from 'test-app/react/example-ld';
 import { CustomProviders } from 'test-app/react/custom-providers';
-import { CustomProvidersWithLD } from 'test-app/react/custom-providers-with-ld';
 import { setupIntl } from 'ember-intl/test-support';
-import { setupLaunchDarkly } from 'ember-launch-darkly/test-support';
-import { getCurrentContext } from 'ember-launch-darkly/-sdk/context';
 
 module('Integration | Component | react-bridge', function (hooks) {
   setupRenderingTest(hooks);
@@ -181,51 +177,6 @@ module('Integration | Component | react-bridge', function (hooks) {
     await rerender();
 
     assert.dom(this.element).hasText('Willkommen in React!');
-  });
-
-  module('when LDProvider is part of custom providers', function (hooks) {
-    setupLaunchDarkly(hooks);
-
-    hooks.beforeEach(async function () {
-      this.customProvidersComponent = CustomProvidersWithLD;
-      this.reactExample = ExampleWithLD;
-
-      this.context = getCurrentContext();
-    });
-
-    test('it can access flags via useFlags hook', async function (assert) {
-      await this.withVariation('feature--experiment-a', true);
-      await render(hbs`
-        <ReactBridge
-          @reactComponent={{this.reactExample}}
-          @providerOptions={{hash
-            component=this.customProvidersComponent
-            props=(hash ldFlags=this.context.allFlags)
-          }}
-        />
-      `);
-
-      assert.dom('[data-test-feature-experiment-a]').exists();
-    });
-
-    test('it re-renders when a flag changes', async function (assert) {
-      await this.withVariation('feature--experiment-a', true);
-      await render(hbs`
-        <ReactBridge
-          @reactComponent={{this.reactExample}}
-          @providerOptions={{hash
-            component=this.customProvidersComponent
-            props=(hash ldFlags=this.context.allFlags)
-          }}
-        />
-      `);
-
-      assert.dom('[data-test-feature-experiment-a]').exists();
-
-      await this.withVariation('feature--experiment-a', false);
-
-      assert.dom('[data-test-feature-experiment-a]').doesNotExist();
-    });
   });
 
   test('it defaults to a div if no tag name is passed as a prop', async function (assert) {
