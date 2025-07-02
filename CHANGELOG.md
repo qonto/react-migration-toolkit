@@ -1,5 +1,25 @@
 # Changelog
 
+## Release (2025-07-02)
+
+@qonto/react-migration-toolkit 3.0.0 (major)
+
+#### :boom: Breaking Change
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#64](https://github.com/qonto/react-migration-toolkit/pull/64) refactor: remove useFlags hook and ldprovider context from react-migration-toolkit ([@CMaiso](https://github.com/CMaiso))
+
+#### :rocket: Enhancement
+* `@qonto/react-migration-toolkit`
+  * [#65](https://github.com/qonto/react-migration-toolkit/pull/65) chore(PolymorphicNavigateContext): export Path type ([@AntoineMoues](https://github.com/AntoineMoues))
+
+#### :memo: Documentation
+* [#32](https://github.com/qonto/react-migration-toolkit/pull/32) Open source readme ([@SkoebaSteve](https://github.com/SkoebaSteve))
+
+#### Committers: 3
+- Antoine Mouës ([@AntoineMoues](https://github.com/AntoineMoues))
+- Camille Maisonobe ([@CMaiso](https://github.com/CMaiso))
+- Steef Janssen ([@SkoebaSteve](https://github.com/SkoebaSteve))
+
 ## Release (2025-02-25)
 
 @qonto/react-migration-toolkit 2.1.1 (patch)
