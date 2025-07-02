@@ -8,7 +8,7 @@ export interface PolymorphicNavigate {
   ): void | Promise<void> | Promise<boolean>;
 }
 
-interface Path
+export interface Path
   extends Partial<{
     hash: string;
     pathname: string;
