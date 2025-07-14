@@ -8,6 +8,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "declarationDir": "declarations",
+    "lib": ["dom", "dom.iterable", "esnext"],
     /**
       https://www.typescriptlang.org/tsconfig#noEmit
 
