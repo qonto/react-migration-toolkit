@@ -2,20 +2,16 @@
   "solution": {
     "@qonto/react-migration-toolkit": {
       "impact": "major",
-      "oldVersion": "2.1.1",
-      "newVersion": "3.0.0",
+      "oldVersion": "3.0.0",
+      "newVersion": "4.0.0",
       "constraints": [
         {
           "impact": "major",
           "reason": "Appears in changelog section :boom: Breaking Change"
-        },
-        {
-          "impact": "minor",
-          "reason": "Appears in changelog section :rocket: Enhancement"
         }
       ],
       "pkgJSONPath": "./react-migration-toolkit/package.json"
     }
   },
-  "description": "## Release (2025-07-02)\n\n@qonto/react-migration-toolkit 3.0.0 (major)\n\n#### :boom: Breaking Change\n* `@qonto/react-migration-toolkit`, `test-app`\n  * [#64](https://github.com/qonto/react-migration-toolkit/pull/64) refactor: remove useFlags hook and ldprovider context from react-migration-toolkit ([@CMaiso](https://github.com/CMaiso))\n\n#### :rocket: Enhancement\n* `@qonto/react-migration-toolkit`\n  * [#65](https://github.com/qonto/react-migration-toolkit/pull/65) chore(PolymorphicNavigateContext): export Path type ([@AntoineMoues](https://github.com/AntoineMoues))\n\n#### :memo: Documentation\n* [#32](https://github.com/qonto/react-migration-toolkit/pull/32) Open source readme ([@SkoebaSteve](https://github.com/SkoebaSteve))\n\n#### Committers: 3\n- Antoine Mouës ([@AntoineMoues](https://github.com/AntoineMoues))\n- Camille Maisonobe ([@CMaiso](https://github.com/CMaiso))\n- Steef Janssen ([@SkoebaSteve](https://github.com/SkoebaSteve))\n"
+  "description": "## Release (2025-07-31)\n\n@qonto/react-migration-toolkit 4.0.0 (major)\n\n#### :boom: Breaking Change\n* `@qonto/react-migration-toolkit`, `test-app`\n  * [#67](https://github.com/qonto/react-migration-toolkit/pull/67) 3.0.1 - chore(routing): remove routing hooks and related context and providers ([@LeonardoRick](https://github.com/LeonardoRick))\n\n#### :bug: Bug Fix\n* [#70](https://github.com/qonto/react-migration-toolkit/pull/70) Revert \"Prepare Release\" ([@m-jovan](https://github.com/m-jovan))\n\n#### :house: Internal\n* [#69](https://github.com/qonto/react-migration-toolkit/pull/69) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n* [#68](https://github.com/qonto/react-migration-toolkit/pull/68) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n\n#### Committers: 3\n- Jovan Milosevic ([@m-jovan](https://github.com/m-jovan))\n- Leonardo Rick ([@LeonardoRick](https://github.com/LeonardoRick))\n- [@github-actions[bot]](https://github.com/apps/github-actions)\n"
 }

@@ -1,7 +1,0 @@
-Warning: unknown package "test-app"
-# Unlabeled Changes
-
-* [#70](https://github.com/qonto/react-migration-toolkit/pull/70) Revert "Prepare Release" ([@m-jovan](https://github.com/m-jovan))
-
-
-*Cannot plan release until the above changes are labeled*.
