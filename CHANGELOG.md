@@ -1,5 +1,25 @@
 # Changelog
 
+## Release (2025-07-31)
+
+@qonto/react-migration-toolkit 4.0.0 (major)
+
+#### :boom: Breaking Change
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#67](https://github.com/qonto/react-migration-toolkit/pull/67) 3.0.1 - chore(routing): remove routing hooks and related context and providers ([@LeonardoRick](https://github.com/LeonardoRick))
+
+#### :bug: Bug Fix
+* [#70](https://github.com/qonto/react-migration-toolkit/pull/70) Revert "Prepare Release" ([@m-jovan](https://github.com/m-jovan))
+
+#### :house: Internal
+* [#69](https://github.com/qonto/react-migration-toolkit/pull/69) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))
+* [#68](https://github.com/qonto/react-migration-toolkit/pull/68) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))
+
+#### Committers: 3
+- Jovan Milosevic ([@m-jovan](https://github.com/m-jovan))
+- Leonardo Rick ([@LeonardoRick](https://github.com/LeonardoRick))
+- [@github-actions[bot]](https://github.com/apps/github-actions)
+
 ## Release (2025-07-02)
 
 @qonto/react-migration-toolkit 3.0.0 (major)
