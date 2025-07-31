@@ -21,6 +21,7 @@ module('Integration | Component | Link', function (hooks) {
         return 'result';
       },
     };
+
     this.router.transitionTo = sinon.spy(transitionTo, 'promise');
     this.setProperties({
       link: Link,
