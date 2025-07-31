@@ -1,7 +1,0 @@
-# Unlabeled Changes
-
-* `@qonto/react-migration-toolkit`, `test-app`
-  * [#67](https://github.com/qonto/react-migration-toolkit/pull/67) 3.0.1 - chore(routing): remove routing hooks and related context and providers ([@LeonardoRick](https://github.com/LeonardoRick))
-
-
-*Cannot plan release until the above changes are labeled*.
