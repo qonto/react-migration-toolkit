@@ -1,0 +1,7 @@
+# Unlabeled Changes
+
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#73](https://github.com/qonto/react-migration-toolkit/pull/73) chore(deps-peer): bump react-intl from 6.6.8 to 7.1.14 ([@LeonardoRick](https://github.com/LeonardoRick))
+
+
+*Cannot plan release until the above changes are labeled*.
