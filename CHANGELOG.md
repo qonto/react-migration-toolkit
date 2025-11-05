@@ -1,5 +1,20 @@
 # Changelog
 
+## Release (2025-11-05)
+
+@qonto/react-migration-toolkit 4.0.2 (patch)
+
+#### :house: Internal
+* Other
+  * [#75](https://github.com/qonto/react-migration-toolkit/pull/75) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))
+  * [#74](https://github.com/qonto/react-migration-toolkit/pull/74) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))
+* `@qonto/react-migration-toolkit`, `test-app`
+  * [#73](https://github.com/qonto/react-migration-toolkit/pull/73) chore(deps-peer): bump react-intl from 6.6.8 to 7.1.14 ([@LeonardoRick](https://github.com/LeonardoRick))
+
+#### Committers: 2
+- Leonardo Rick ([@LeonardoRick](https://github.com/LeonardoRick))
+- [@github-actions[bot]](https://github.com/apps/github-actions)
+
 ## Release (2025-07-31)
 
 @qonto/react-migration-toolkit 4.0.0 (major)

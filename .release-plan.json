@@ -1,17 +1,17 @@
 {
   "solution": {
     "@qonto/react-migration-toolkit": {
-      "impact": "major",
-      "oldVersion": "3.0.0",
-      "newVersion": "4.0.0",
+      "impact": "patch",
+      "oldVersion": "4.0.1",
+      "newVersion": "4.0.2",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./react-migration-toolkit/package.json"
     }
   },
-  "description": "## Release (2025-07-31)\n\n@qonto/react-migration-toolkit 4.0.0 (major)\n\n#### :boom: Breaking Change\n* `@qonto/react-migration-toolkit`, `test-app`\n  * [#67](https://github.com/qonto/react-migration-toolkit/pull/67) 3.0.1 - chore(routing): remove routing hooks and related context and providers ([@LeonardoRick](https://github.com/LeonardoRick))\n\n#### :bug: Bug Fix\n* [#70](https://github.com/qonto/react-migration-toolkit/pull/70) Revert \"Prepare Release\" ([@m-jovan](https://github.com/m-jovan))\n\n#### :house: Internal\n* [#69](https://github.com/qonto/react-migration-toolkit/pull/69) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n* [#68](https://github.com/qonto/react-migration-toolkit/pull/68) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n\n#### Committers: 3\n- Jovan Milosevic ([@m-jovan](https://github.com/m-jovan))\n- Leonardo Rick ([@LeonardoRick](https://github.com/LeonardoRick))\n- [@github-actions[bot]](https://github.com/apps/github-actions)\n"
+  "description": "## Release (2025-11-05)\n\n@qonto/react-migration-toolkit 4.0.2 (patch)\n\n#### :house: Internal\n* Other\n  * [#75](https://github.com/qonto/react-migration-toolkit/pull/75) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n  * [#74](https://github.com/qonto/react-migration-toolkit/pull/74) Prepare Release ([@github-actions[bot]](https://github.com/apps/github-actions))\n* `@qonto/react-migration-toolkit`, `test-app`\n  * [#73](https://github.com/qonto/react-migration-toolkit/pull/73) chore(deps-peer): bump react-intl from 6.6.8 to 7.1.14 ([@LeonardoRick](https://github.com/LeonardoRick))\n\n#### Committers: 2\n- Leonardo Rick ([@LeonardoRick](https://github.com/LeonardoRick))\n- [@github-actions[bot]](https://github.com/apps/github-actions)\n"
 }
