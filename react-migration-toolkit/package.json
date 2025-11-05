@@ -1,6 +1,6 @@
 {
   "name": "@qonto/react-migration-toolkit",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A toolkit to help migrate Ember components to React",
   "keywords": [
     "ember-addon"
@@ -138,7 +138,7 @@
   },
   "peerDependencies": {
     "ember-source": "^3.28.0 || ^4.0.0 || ^5.0.0",
-    "react-intl": "^6.6.8",
+    "react-intl": "^7.1.14",
     "ember-intl": "^7.0.0 && <7.0.8"
   },
   "peerDependenciesMeta": {
